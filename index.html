@@ -6,18 +6,39 @@ layout: default
 
   <h1 class="page-heading">Posts</h1>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <div class="card-columns">
+    {% for recording in site.data.master | group_by : 'Title'  %}
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+      {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
+
+      {% assign next_year = site.data.master[forloop.index].Date | date : "%Y"   %}
+
+      {% if forloop.first %}
+        <div class="card card-block">
+          <h1>{{this_year}}</h1>
+        </div>
+      {% endif %}
+
+      <div class="card card-block">
+        <h4 class="card-title">{{ recording.Title }} - {{this_year}} - {{next_year}}</h4>
+        <p class="card-text">{{ recording.Date | date: "%b %-d, %Y" }}</p>
+      </div>
+
+
+      {% if this_year != next_year %}
+        <div class="card card-block">
+          <h1>{{next_year}}</h1>
+        </div>
+      {% endif %}
+
+
+
     {% endfor %}
-  </ul>
+  </div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+  {% include test.html %}
+
 
 </div>
