@@ -1,0 +1,21 @@
+{
+  "name": "music-and-the-mind-of-the-world",
+  "homepage": "https://github.com/familiar-studio/music-and-the-mind-of-the-world",
+  "authors": [
+    "Keith Mancuso <keithmancuso@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2"
+  }
+}
