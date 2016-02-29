@@ -4,39 +4,65 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+  <h1 class="page-heading"></h1>
 
   <div class="card-columns">
-    {% for recording in site.data.master | group_by : 'Title'  %}
+    {% for recording in site.data.master | group_by : 'Title' %}
+    {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
+    {% assign next_year = site.data.master[forloop.index].Date | date : "%Y" %}
+    {% if forloop.first %}
+    <div class="card card-block">
+      <p class="small"></p>
+      <h4 class="card-title">{{ this_year }}</h4>
+      <p class="card-text"></p>
+      <div class="brand-small"></div>
+    </div>
 
-      {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
+    {% endif %}
 
-      {% assign next_year = site.data.master[forloop.index].Date | date : "%Y"   %}
-
-      {% if forloop.first %}
-        <div class="card card-block">
-          <h1>{{this_year}}</h1>
-        </div>
-      {% endif %}
-
-      <div class="card card-block">
-        <h4 class="card-title">{{ recording.Title }} - {{this_year}} - {{next_year}}</h4>
-        <p class="card-text">{{ recording.Date | date: "%b %-d, %Y" }}</p>
-      </div>
-
-
-      {% if this_year != next_year %}
-        <div class="card card-block">
-          <h1>{{next_year}}</h1>
-        </div>
-      {% endif %}
+    <div class="card card-block">
+      <p class="small">{{recording.id}}</p>
+      <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
+      <p class="card-text">{{ recording.Title }} - {{this_year}} - {{next_year}}</p>
+      <div class="brand-small ">{{recording.Timecode}}</div>
+    </div>
 
 
-
+    {% if this_year != next_year %}
+    <div class="card card-block">
+      <p class="small"></p>
+      <h4 class="card-title">{{ next_year }}</h4>
+      <p class="card-text"></p>
+      <div class="brand-small"></div>
+    </div>
+    {% endif %}
     {% endfor %}
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="img-fluid" src="http://placehold.it/370x280">
+      </div>
+      <div class="col-md-8">
+        <h2 class="page-title">About the work</h2>
+        <p>In December 1976, Tony Conrad started recording "Music and the Mind of the Word," a gigantic project comprising over 150 hours of performance at the piano.</p>
+        <p>At its conception, this piece is all‑inclusive: everything played, during more than five years, was recorded (with the incidental exception of perhaps three or four hours). Moreover, Tony Conrad's prior keyboard performance had been extremely limited and perfunctory; through this mass of recorded material, we witness what might in essence be described as the total encounter between an improvising performer and the central instrument of Western musical culture.</p>
+        <p>In 1976, Tony Conrad's experience as a performer-composer had included more than fifteen years' activity, including important contribution to the theory and practice of tonal systems used by La Monte Young, Terry Riley, Arnold Dreyblatt, and others. He had performed with John Cage and Christian Wolff, and had written using tape delay by 1961. His work in composition and performance was recognized through support by The Rockefeller Foundation and The Cassandra Foundation.</p>
+        <p>"Music and the Mind of the Word" is a work that acts to redefine the way music and composition are thought of and heard. The appearance of radically different forms, introducing new esthetic perspectives into musical expression and hearing, is the characteristic most valued in Western serious music. That new forms have not emerged since the early 1960's may be attributed to two factors. First, the exploration of novel sounds during the previous hundred years had been essentially consummated. Second, the increased accessibility of recorded music from other cultures has stimulated composers without concentrating their attention further on the specific project of Western music. Meanwhile, the specific forms and contexts for the presentation of Western music have become increasingly confined, in dwindling opportunities for traditional concert‑format presentation. The challenges of recorded forms have been overlooked. To see how this is so, remember the joke about the wealthy mother of two sons who recorded her whole life, from age 40 until her death at 70. She willed her entire fortune to that son who would listen to the complete recording.</p>
+        <p>Sometime around September 1959, Dennis Johnson confronted me playfully. "I've written The Ultimate Composition," he said. Never one to take Dennis for granted, I asked to see it. He handed me a piece of paper on which was printed the word, "LISTEN." Stories can mix fiction with insight in surprising proportions. When, around 1977, David Salle said, "The paintings are dead," he intended to announce the relationship of separation and unfulfillment which might prevail between the viewer and a great work. And, though each of these stories addresses a crucial juncture in the understanding of the participation of the viewer or listener in Western art (a juncture whose elucidation is difficult or impossible to approach from within the critical framework of modernism), each of them also neglects a concomitant essential. The great work of art is strong enough to define the life duties of the beholder, but it also comes into being by embodying the vulnerability and self‑compromise it traces across the life experience of the artist.</p>
+        <p>Improvisation is emblematic of vulnerability and the possibility for self‑compromise; since these qualities have normally been regarded with suspicion, much "improvisation" used in public performance is either worked out and rehearsed ahead of time or assembled (in an act of real-time composition) out of pre‑rehearsed routines. In "Music and the Mind of the Word," there is no rehearsal. Routines and musical ideas certainly reappear, but each of these has, in its original appearance, emerged along the brink of vulnerability. The performer's disdain for "correct" performance technique, while he still generally restricts his use of the piano to working the keys and pedals (rather than, say, breaking the strings), helps to insure the personalization, and hence the vulnerability, of each new routine. When rehearsal appears, as practice or warmup, it is included without reservation. The sound of practicing is one of the important materials of music set in motion within this work.</p>
+        <p>Just as every sound in "Music and the Mind of the Word" is personalized and made vulnerable through its immediate context as living improvisation, so on the other hand every sound acts as a reference to the sounds and musical ideas which are the world of musical experience of the performer. The sharing of these references between the performer and the audience is always what permits music to communicate. Segments of the work which are devoted to different particular references (themes, types of performance, harmonies, stylistic sensibilities, etc.) become iconic: they invoke the listener's abilities of recognition, while still remaining specific and particular to this work. This kind of iconicity keeps the listener at a distance; recognition and association function to carry the listener into their own world of musical associations. What prevents this associative experience from devolving intosimple eclecticism is, again, the personalization and risk that the performer sustains by functioning at the limit of technique and through pure improvisation.</p>
+        <p>Improvisation, incidentally, may suggest a desire to achieve a naive or direct esthetic disengagement from the confines of sophisticated musical thinking. This popular simplification could not be farther from the case, in the instance of "Music and the Mind of the Word." Since "Music and the Mind of the Word" employs improvisatory structure to develop a novel serious musical approach, it might be helpful to point out the variety of serious approaches that have entailed improvisation: In John Cage's music, improvisation reinforces the distance between the composer and the performance. In bebop, it originally helped to insulate the performer from being imitated. In classical Indian music, it functions to maintain the exacting principles that are the traditional framework for every musician. In the European tradition, it offered the individual performer a showcase for their technical brilliance, especially in cadenzas; some major artists known today as composers  (like Bach and Beethoven) were renowned in their own times for their improvisatory performances.</p>
+        <p>There are limited precedents for a music that opens itself to a process of association with precedent experience; the ambiguous and elliptical harmony of late Fauré must be heard as a complex refraction of common practice harmony, and Bartók's music poises itself against its background in folk music particular to the region of his birth. Neither is anthologizing coloristic material (like Liszt, for instance); also neither composer fits easily into the progressive modernist lineage. In "Music and the Mind of the Word," however, the resources of style and idiom, sound texture, and contextual sensibility are expanded to fill the whole world of associations accessible to the composer through his technical means and musical memory. This implicit body of informing cultural information functions to authorize the performance in much the way that a score functions, and it is important in "Music and the Mind of the Word" that the formalizing distance inherent in this authorization process be acknowledged by the listener. It is at the point of recognition of this "score" that the composer is speaking through the performance, and linking the work within the network of intersecting authority structures that distinguish art from other undifferentiated experience.</p>
+        <p>As the workings of "Music and the Mind of the Word" that inscribe its intentionality within the conventions of art (and mobilize its ability to make an esthetic statement) depend upon the listener's recognition of authority relationships, the piece periodically urges awareness of authority. Especially during some of the segments that were performed publicly before audiences, metronomes and voice tracks were introduced, in such a way as to suggest the ongoing castigation of the performer. The audience then has clues to the structures of authorization and vulnerability that are lees apparent if the listener either expects that the performance was "rehearsed," or that the performance is trying to be proficient and failing. Some of the public performances have been in Buffalo, Albany, at LAICA in L.A., U.C.S.D., and The Kitchen and P.S. 1 in New York. Some of these performances have fallen into subgroups, under separate titles: "Tiding Over," "Any Time," and "100 Songs."</p>
+        <p>By avoiding the literal score but registering a parallel sense of authorization through musical references grounded in a process of association, Tony Conrad inverts the restrictive presupposition in Western music that the tradition is extrinsic to the particular experience and perception of any one individual. It is necessary to make this inversion, for composers to cope with the vastly expanded musical experience they now have available; yet the modernist tradition is largely incapable of providing an esthetic posture compatible with such a move. The particularity of Tony Conrad's experience in music may make some of his associational and articulational references appear obscure to some listeners. As the composer/performer makes the whole of his musical world available through his own choices, he (in this case) presumes to include some strategies that others may construe as efforts to make "new music." On the contrary, Tony Conrad treats the material of formal "modern" music and of "minimal" music as familiar references to established and dead idioms.</p>
+        <p>There are problems in listening to "Music and the Mind of the Word," such as the departures in attitude which it adopts with reference to rehearsal and technique. It also creates structural problems for the listener in terms of its enormous size as a musical object; it is unlikely that anyone will systematically listen to the complete work. However, the more essential obstacles are those which offer the most direct rewards, in redefining the listeners' relationship to music generally, and in implementing a substantially unanticipated critical approach to composition, and to the interactive relation between artist, work, and perceiver. Within an awareness of its context, any few segments from the immense body of "Music and the Mind of the Word" can be perceived by the listener as providing an occasion for a profound and comprehensive realignment of musical values and attitudes, with reference to the authority of musical culture and the role of the listener in redefining that authority.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p>
 
   {% include test.html %}
 
