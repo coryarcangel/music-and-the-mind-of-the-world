@@ -6,6 +6,7 @@ layout: default
 
   <h1 class="page-heading"></h1>
 
+
   <div class="card-columns">
     {% for recording in site.data.master | group_by : 'Title' %}
     {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
@@ -62,9 +63,8 @@ layout: default
   </div>
 </div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p>
 
-  {% include test.html %}
+  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p>
 
 
 </div>
