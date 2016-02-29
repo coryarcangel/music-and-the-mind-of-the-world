@@ -9,15 +9,7 @@ layout: default
   <div class="card-columns">
     {% for recording in site.data.master  %}
 
-      {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
 
-      {% assign next_year = site.data.master[forloop.index].Date | date : "%Y"   %}
-
-      {% if forloop.first %}
-        <div class="card card-block">
-          <h1>{{this_year}}</h1>
-        </div>
-      {% endif %}
 
       <div class="card card-block">
         <h4 class="card-title">{{ recording.Title }} - {{this_year}} - {{next_year}}</h4>
@@ -25,20 +17,11 @@ layout: default
       </div>
 
 
-      {% if this_year != next_year %}
-        <div class="card card-block">
-          <h1>{{next_year}}</h1>
-        </div>
-      {% endif %}
-
-
 
     {% endfor %}
   </div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-  {% include test.html %}
 
 
 </div>
