@@ -6,20 +6,7 @@ layout: default
 
   <h1 class="page-heading">Posts</h1>
 
-  <div class="card-columns">
-    {% for recording in site.data.master  %}
 
-
-
-      <div class="card card-block">
-        <h4 class="card-title">{{ recording.Title }} - {{this_year}} - {{next_year}}</h4>
-        <p class="card-text">{{ recording.Date | date: "%b %-d, %Y" }}</p>
-      </div>
-
-
-
-    {% endfor %}
-  </div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
