@@ -6,39 +6,39 @@ layout: default
 
   <h1 class="page-heading"></h1>
 
-
   <div class="card-columns">
     {% for recording in site.data.master | group_by : 'Title' %}
     {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
     {% assign next_year = site.data.master[forloop.index].Date | date : "%Y" %}
     {% if forloop.first %}
-    <div class="card card-block">
-      <p class="small"></p>
-      <h4 class="card-title">{{ this_year }}</h4>
-      <p class="card-text"></p>
-      <div class="brand-small"></div>
+    <div class="card card-year">
+      <div class="card-block">
+        <h4 class="card-title">{{ this_year }}</h4>
+      </div>
     </div>
 
     {% endif %}
 
-    <div class="card card-block">
-      <p class="small">{{recording.id}}</p>
-      <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
-      <p class="card-text">{{ recording.Title }} - {{this_year}} - {{next_year}}</p>
+    <div class="card card-recording">
+      <div class="card-block">
+        <p class="small">{{recording.id}}</p>
+        <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
+        <p class="card-text">{{ recording.Title }} - {{this_year}} - {{next_year}}</p>
+      </div>
       <div class="brand-small ">{{recording.Timecode}}</div>
     </div>
 
 
     {% if this_year != next_year %}
-    <div class="card card-block">
-      <p class="small"></p>
-      <h4 class="card-title">{{ next_year }}</h4>
-      <p class="card-text"></p>
-      <div class="brand-small"></div>
+    <div class="card card-year">
+      <div class="card-block">
+        <h4 class="card-title">{{ next_year }}</h4>
+      </div>
     </div>
     {% endif %}
     {% endfor %}
   </div>
+
   <div class="container">
     <div class="row">
       <div class="col-md-4">

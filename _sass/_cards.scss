@@ -1,17 +1,58 @@
-.card-columns .card {
-  width: 250px;
-  min-height: 261px;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #526d84;
-  font-size: 1em;
-  color: rgba(0, 0, 0, 0.25);
-  margin: 30px;
-
-}
 .card-columns{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  &:after {
+    content: "";
+    flex: auto;
+  }
+
+  .card {
+    position: relative;
+    width: 15.625rem;
+    height: 16.313rem;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.25);
+    margin: 15px;
+
+    .small {
+      margin-bottom: 5px;
+    }
+
+    &.card-recording {
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+      border-bottom: 2px solid #526d84;
+      font-size: 1rem;
+
+      .card-title {
+        min-height: 100px;
+      }
+
+      // .card-text {
+      //   position: absolute;
+      //   bottom: 15px;
+      // }
+
+      .brand-small {
+        font-size: 0.625rem;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    &.card-year {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: transparent;
+      border: none;
+      .card-title {
+        font-size: 6rem;
+      }
+    }
+
+  }
 }
 
 .card .brand-small, .card .card-title{
