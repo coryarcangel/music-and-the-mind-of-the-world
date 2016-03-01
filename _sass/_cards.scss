@@ -59,6 +59,10 @@
         }
       }
 
+      .progress-bar {
+        display: none;
+      }
+
       &.active {
         background-color: $brand-primary;
 
@@ -77,6 +81,10 @@
               stroke: white;
             }
           }
+        }
+
+        .progress-bar {
+          display: block;
         }
       }
     }

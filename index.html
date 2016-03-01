@@ -27,8 +27,14 @@ layout: default
       <div class="audio-controls">
         <button class="btn-audio play" v-show="playing != '{{ recording.id }}'" v-on:click="playSong('{{ recording.Date | date: "%A, %B %-d, %Y" }}', '{{ recording.id }}')">{% include play.svg %}</button>
         <button class="btn-audio pause" v-show="playing == '{{ recording.id }}'" v-on:click="stopSong()">{% include pause.svg %}</button>
-        <div class="brand-small">{{recording.Timecode}}</div>
+        <div class="brand-small" v-show="playing != '{{ recording.id }}'">{{recording.Timecode}}</div>
         <button class="btn-audio download">{% include download.svg %}</button>
+        {% raw %}
+        <div class="progress-bar">
+          <div class="brand-small">{{ currentTime }}|{{ totalTime }}</div>
+          <progress class="progress" value="{{ elapsedPercentage }}" max="100">25%</progress>
+        </div>
+        {% endraw %}
       </div>
     </div>
 
