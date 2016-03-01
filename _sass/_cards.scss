@@ -61,6 +61,23 @@
 
       &.active {
         background-color: $brand-primary;
+
+        .small, .card-text {
+          color: rgba(255, 255, 255, 0.25);
+        }
+
+        .card-title {
+          color: white;
+        }
+
+        .download {
+          svg {
+            path {
+              fill: white;
+              stroke: white;
+            }
+          }
+        }
       }
     }
 
