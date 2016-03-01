@@ -20,11 +20,12 @@
 
         <nav class="navbar navbar-fixed-top navbar-light bg-faded">
           <h1 class="navbar-brand">TONY CONRAD <span class="white-text"> MUSIC & THE MIND OF THE WORLD</span></h1>
+
           {% raw %}
           <ul class="nav navbar-nav list-inline" id="playing">
             <li class="list-inline-item nav-item">Now Playing</li>
             <li class="list-inline-item nav-item white-text">{{ title }}</li>
-            <li class="list-inline-item nav-item">{{currentTime}}/{{totalTime}}</li>
+            <li class="list-inline-item nav-item"  v-on:click="stopSong">{{currentTime}}/{{totalTime}}</li>
           </ul>
           {% endraw %}
 
@@ -47,9 +48,8 @@
       </footer>
     </div>
   </body>
-    <script src="/scripts/vue.min.js" charset="utf-8"></script>
-
-    <script src="/scripts/music.js" charset="utf-8"></script>
+  <script src="/scripts/vue.min.js" charset="utf-8"></script>
+  <script src="/scripts/music.js" charset="utf-8"></script>
 
 
 
