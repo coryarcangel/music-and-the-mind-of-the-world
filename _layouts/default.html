@@ -15,75 +15,42 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   </head>
   <body>
+    <div id="app">
+      <header id="header">
 
-    <header id="header">
+        <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+          <h1 class="navbar-brand">TONY CONRAD <span class="white-text"> MUSIC & THE MIND OF THE WORLD</span></h1>
+          {% raw %}
+          <ul class="nav navbar-nav list-inline" id="playing">
+            <li class="list-inline-item nav-item">Now Playing</li>
+            <li class="list-inline-item nav-item white-text">{{ title }}</li>
+            <li class="list-inline-item nav-item">{{currentTime}}/{{totalTime}}</li>
+          </ul>
+          {% endraw %}
 
-      <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-        <h1 class="navbar-brand">TONY CONRAD <span class="white-text"> MUSIC & THE MIND OF THE WORLD</span></h1>
 
-        <ul class="nav navbar-nav list-inline">
-          <li class="list-inline-item nav-item">Now Playing</li>
-          <li class="list-inline-item nav-item white-text">Sunday, June 22, 1980</li>
-          <li class="list-inline-item nav-item">7:23/22:30</li>
-        </ul>
+          <div class="nav navbar-nav pull-xs-right">
+           <a class="nav-item nav-link" href="#">About the work</a>
+           <a class="nav-item nav-link" href="#">Download</a>
+         </div>
+        </nav>
 
+      </header>
 
-        <div class="nav navbar-nav pull-xs-right">
-         <a class="nav-item nav-link" href="#">About the work</a>
-         <a class="nav-item nav-link" href="#">Download</a>
-       </div>
-      </nav>
-
-    </header>
-
-    <main id="main">
-
-      <h1>in the layout</h1>
-
-      <div class="container-fluid">
-        {{ content }}
-      </div>
-
-    </main>
-
-    <footer class="site-footer">
-
-      <div class="wrapper">
-
-        <h2 class="footer-heading">{{ site.title }}</h2>
-
-        <div class="footer-col-wrapper">
-          <div class="footer-col footer-col-1">
-            <ul class="contact-list">
-              <li>{{ site.title }}</li>
-              <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col footer-col-2">
-            <ul class="social-media-list">
-              {% if site.github_username %}
-              <li>
-                {% include icon-github.html username=site.github_username %}
-              </li>
-              {% endif %}
-
-              {% if site.twitter_username %}
-              <li>
-                {% include icon-twitter.html username=site.twitter_username %}
-              </li>
-              {% endif %}
-            </ul>
-          </div>
-
-          <div class="footer-col footer-col-3">
-            <p>{{ site.description }}</p>
-          </div>
+      <main id="main">
+        <div class="container-fluid">
+          {{ content }}
         </div>
+      </main>
 
-      </div>
-
-    </footer>
+      <footer>
+      </footer>
+    </div>
   </body>
+    <script src="/scripts/vue.min.js" charset="utf-8"></script>
+
+    <script src="/scripts/music.js" charset="utf-8"></script>
+
+
 
 </html>
