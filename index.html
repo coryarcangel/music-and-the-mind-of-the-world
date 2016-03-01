@@ -17,16 +17,16 @@ layout: default
 
     {% endif %}
 
-    <div class="card card-recording">
+    <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ recording.id }}' }">
       <div class="card-block">
         <p class="small">{{recording.id}}</p>
-        <h4 class="card-title" v-on:click="playSong('{{ recording.Date | date: "%A, %B %-d, %Y" }}')">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
+        <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
         <p class="card-text">{{ recording.Title }} - {{this_year}} - {{next_year}}</p>
       </div>
 
       <div class="audio-controls">
-        <button class="btn-audio play visible">{% include play.svg %}</button>
-        <button class="btn-audio pause">{% include pause.svg %}</button>
+        <button class="btn-audio play" v-show="playing != '{{ recording.id }}'" v-on:click="playSong('{{ recording.Date | date: "%A, %B %-d, %Y" }}', '{{ recording.id }}')">{% include play.svg %}</button>
+        <button class="btn-audio pause" v-show="playing == '{{ recording.id }}'">{% include pause.svg %}</button>
         <div class="brand-small">{{recording.Timecode}}</div>
         <button class="btn-audio download">{% include download.svg %}</button>
       </div>

@@ -40,10 +40,6 @@
           background-color: transparent;
         }
 
-        .pause {
-          display: none;
-        }
-
         .download {
           position: absolute;
           right: 0px;
@@ -61,6 +57,10 @@
           display: inline-block;
           font-size: 0.625rem;
         }
+      }
+
+      &.active {
+        background-color: $brand-primary;
       }
     }
 
