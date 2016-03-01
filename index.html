@@ -21,9 +21,10 @@ layout: default
 
     {% endif %}
 
+
     <div class="card card-block">
       <p class="small">{{recording.id}}</p>
-      <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
+      <h4 class="card-title" v-on:click="playSong('{{recording.Date | date: "%A, %B %-d, %Y"}}')">{{ recording.Date | date: "%A, %B %-d, %Y" }} test</h4>
       <p class="card-text">{{ recording.Title }} - {{this_year}} - {{next_year}}</p>
       <div class="brand-small ">{{recording.Timecode}}</div>
     </div>
