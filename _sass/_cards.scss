@@ -1,4 +1,4 @@
-.card-columns{
+#recordings {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -9,6 +9,7 @@
   }
 
   .card {
+    // display: inline-block;
     position: relative;
     width: 15.625rem;
     height: 16.313rem;
@@ -29,15 +30,37 @@
         min-height: 100px;
       }
 
-      // .card-text {
-      //   position: absolute;
-      //   bottom: 15px;
-      // }
-
-      .brand-small {
-        font-size: 0.625rem;
+      .audio-controls {
         position: absolute;
         bottom: 0;
+        width: 100%;
+
+        .btn-audio {
+          border: none;
+          background-color: transparent;
+        }
+
+        .pause {
+          display: none;
+        }
+
+        .download {
+          position: absolute;
+          right: 0px;
+
+          .svg-download {
+            opacity: 0.5;
+            .triangle {
+              transform-origin: center;
+              transform: rotateZ(90deg);
+            }
+          }
+        }
+
+        .brand-small {
+          display: inline-block;
+          font-size: 0.625rem;
+        }
       }
     }
 

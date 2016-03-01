@@ -13,3 +13,16 @@
   text-transform: uppercase;
   font-size: 15px;
 }
+
+#main {
+  margin-top: 50px;
+}
+
+#about {
+  color: $brand-primary;
+
+  img {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
