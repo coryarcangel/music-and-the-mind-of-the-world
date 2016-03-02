@@ -28,6 +28,8 @@ new Vue({
         this.audio.pause();
       }
 
+      console.log(id);
+
       this.playing = id;
       this.audio = new Audio('http://music-and-the-mind-of-the-world.s3.amazonaws.com/780119.mp3');
       this.currentTime = '';
@@ -49,6 +51,11 @@ new Vue({
       this.audio.pause();
       this.playing = '';
       this.title = 'nothin';
+    },
+    nextSong: function(id) {
+      console.log(id);
+      this.playing = (Number(id) +1);
+
     }
   }
 })
