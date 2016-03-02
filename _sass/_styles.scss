@@ -1,13 +1,29 @@
-.bg-faded {
-  background-color: $brand-primary;
+.navbar {
+  &.bg-faded {
+    background-color: $brand-primary;
+  }
+
+  .navbar-brand {
+    font-size: 15px;
+    text-decoration: none;
+
+    .title {
+      color: white;
+      margin-left: 20px;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: white;
+      font-size: 15px;
+    }
+  }
+  .song-title, .time-elapsed {
+    color: white;
+  }
 }
-.white-text{
-  color: #ffffff;
-}
-.navbar-light .navbar-nav .nav-link, .navbar-light h1 {
-  color: #000000;
-  font-size: 15px;
-}
+
 .page-title{
   color: $brand-primary;
   text-transform: uppercase;

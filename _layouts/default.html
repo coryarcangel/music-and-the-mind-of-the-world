@@ -19,19 +19,19 @@
       <header id="header">
 
         <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-          <h1 class="navbar-brand">TONY CONRAD <span class="white-text"> MUSIC & THE MIND OF THE WORLD</span></h1>
+          <a href="#" class="navbar-brand">TONY CONRAD<span class="title">MUSIC & THE MIND OF THE WORLD</span></a>
 
           {% raw %}
           <ul class="nav navbar-nav list-inline" id="playing">
-            <li class="list-inline-item nav-item">Now Playing</li>
-            <li class="list-inline-item nav-item white-text">{{ title }}</li>
-            <li class="list-inline-item nav-item"  v-on:click="stopSong">{{currentTime}}/{{totalTime}}</li>
+            <li class="list-inline-item nav-item">NOW PLAYING</li>
+            <li class="list-inline-item nav-item song-title">{{ title }}</li>
+            <li class="list-inline-item nav-item"  v-on:click="stopSong"><span class="time-elapsed">{{currentTime}}</span>/{{totalTime}}</li>
           </ul>
           {% endraw %}
 
 
           <div class="nav navbar-nav pull-xs-right">
-           <a class="nav-item nav-link" href="#">About the work</a>
+           <a class="nav-item nav-link" href="#about">About the work...</a>
            <a class="nav-item nav-link" href="#">Download</a>
          </div>
         </nav>
@@ -39,7 +39,7 @@
       </header>
 
       <main id="main">
-        <div class="container-fluid">
+        <div class="container">
           {{ content }}
         </div>
       </main>

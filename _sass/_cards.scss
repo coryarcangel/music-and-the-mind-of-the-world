@@ -1,12 +1,21 @@
+.container {
+  border: 1px solid red;
+}
+
 #recordings {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  &:after {
-    content: "";
-    flex: auto;
+  @include media-breakpoint-up(sm) {
+    justify-content: flex-start;
   }
+  // justify-content: center;
+  //
+  // &:after {
+  //   content: "";
+  //   flex: auto;
+  // }
 
   .card {
     // display: inline-block;
@@ -124,6 +133,18 @@
         .brand-small {
           position: absolute;
           bottom: 3px;
+          margin-left: -25px;
+
+          .divider {
+            width: 2px;
+            height: 17px;
+            position: relative;
+            top: 7px;
+            z-index: 1;
+            background-color: white;
+            display: inline-block;
+          }
+
           .time-elapsed {
             color: white;
           }
