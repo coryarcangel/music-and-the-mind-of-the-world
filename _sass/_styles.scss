@@ -26,6 +26,7 @@
 }
 
 #intro {
+  padding-top: 1rem;
   h1 {
     font-size: 0.938rem;
     font-weight: 700;
@@ -66,5 +67,101 @@
   img {
     margin-top: 2rem;
     margin-bottom: 2rem;
+  }
+}
+
+.audio-controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .btn-audio {
+    border: none;
+    background-color: transparent;
+  }
+
+  .download {
+    position: absolute;
+    right: 0px;
+
+    .svg-download {
+      opacity: 0.5;
+      .triangle {
+        transform-origin: center;
+        transform: rotateZ(90deg);
+      }
+    }
+  }
+
+  .brand-small {
+    display: inline-block;
+    font-size: 0.625rem;
+
+    .divider {
+      width: 2px;
+      height: 17px;
+      position: relative;
+      top: 7px;
+      z-index: 1;
+      background-color: white;
+      display: inline-block;
+    }
+
+    .time-elapsed {
+      color: white;
+    }
+
+    .time-total {
+      color: black;
+    }
+  }
+}
+
+.progress-bar {
+  position: relative;
+
+  progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+    height: 4px;
+    width: 100%;
+  }
+
+  progress[value]::-webkit-progress-bar {
+    background-color: black;
+    border-radius: 0;
+  }
+
+  progress[value] {
+    background-color: black;
+    border-radius: 0;
+  }
+}
+
+#mobile-audio-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+
+  .audio-controls {
+    background-color: #f7f6f2;
+
+    .pause {
+      svg {
+        path {
+          stroke: $brand-primary;
+        }
+      }
+    }
+
+    .brand-small {
+      position: absolute;
+      bottom: 3px;
+      margin-left: -25px;
+    }
   }
 }

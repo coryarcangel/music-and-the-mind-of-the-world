@@ -48,6 +48,24 @@
 
       </header>
 
+      <section class="hidden-sm-up" id="mobile-audio-controls">
+        <div class="audio-controls">
+          <button class="btn-audio play" v-show="playing == ''" v-on:click="playSong('{{ recording.Date | date: "%A, %B %-d, %Y" }}', '{{ recording.id }}')">{% include play.svg %}</button>
+          <button class="btn-audio pause" v-show="playing != ''" v-on:click="stopSong()">{% include pause.svg %}</button>
+          {% raw %}
+          <span>{{ title }}</span>
+          <div class="progress-bar">
+            <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
+              <span class="time-elapsed">{{ currentTime }}</span>
+              <span class="divider"></span>
+              <span class="time-total">{{ totalTime }}</span>
+            </div>
+            <progress class="progress progress-info" value="{{ elapsedPercentage }}" max="100">25%</progress>
+          </div>
+          {% endraw %}
+        </div>
+      </section>
+
       <main id="main">
         <div class="container">
           {{ content }}
@@ -56,6 +74,8 @@
 
       <footer>
       </footer>
+
+
     </div>
   </body>
   <script src="/scripts/vue.min.js" charset="utf-8"></script>

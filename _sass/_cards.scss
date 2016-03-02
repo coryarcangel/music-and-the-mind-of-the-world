@@ -33,35 +33,6 @@
         min-height: 100px;
       }
 
-      .audio-controls {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-
-        .btn-audio {
-          border: none;
-          background-color: transparent;
-        }
-
-        .download {
-          position: absolute;
-          right: 0px;
-
-          .svg-download {
-            opacity: 0.5;
-            .triangle {
-              transform-origin: center;
-              transform: rotateZ(90deg);
-            }
-          }
-        }
-
-        .brand-small {
-          display: inline-block;
-          font-size: 0.625rem;
-        }
-      }
-
       .progress-bar {
         display: none;
       }
@@ -97,49 +68,13 @@
 
         .progress-bar {
           display: block;
-          position: relative;
-
-          progress {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            margin-bottom: 0;
-            height: 4px;
-            width: 100%;
-          }
-
-          progress[value]::-webkit-progress-bar {
-            background-color: black;
-            border-radius: 0;
-          }
-
-          progress[value] {
-            background-color: black;
-            border-radius: 0;
-          }
         }
 
-        .brand-small {
-          position: absolute;
-          bottom: 3px;
-          margin-left: -25px;
-
-          .divider {
-            width: 2px;
-            height: 17px;
-            position: relative;
-            top: 7px;
-            z-index: 1;
-            background-color: white;
-            display: inline-block;
-          }
-
-          .time-elapsed {
-            color: white;
-          }
-
-          .time-total {
-            color: black;
+        .audio-controls {
+          .brand-small {
+            position: absolute;
+            bottom: 3px;
+            margin-left: -25px;
           }
         }
       }
@@ -162,9 +97,8 @@
         @include media-breakpoint-up(sm) {
           padding: 1.25rem;
         }
-
-
       }
+
       .card-title {
         font-size: 6rem;
         margin-bottom: 0;
@@ -174,7 +108,6 @@
         }
       }
     }
-
   }
 }
 
