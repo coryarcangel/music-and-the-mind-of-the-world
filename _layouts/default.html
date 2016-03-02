@@ -18,7 +18,7 @@
     <div id="app">
       <header id="header">
 
-        <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+        <nav class="navbar navbar-fixed-top navbar-light bg-faded hidden-xs-down">
           <a href="#" class="navbar-brand">TONY CONRAD<span class="title">MUSIC & THE MIND OF THE WORLD</span></a>
 
           {% raw %}
@@ -33,8 +33,18 @@
           <div class="nav navbar-nav pull-xs-right">
            <a class="nav-item nav-link" href="#about">About the work...</a>
            <a class="nav-item nav-link" href="#">Download</a>
+           <a class="nav-item nav-link" href="#">{% include search.svg %}</a>
          </div>
         </nav>
+
+        <section class="hidden-sm-up" id="intro">
+          <div class="container">
+            <h1>TONY CONRAD</h1>
+            <h1 class="title">MUSIC & THE MIND OF THE WORLD</h1>
+            <div>In December 1976, Tony Conrad started recording "Music and the Mind of the Word," a gigantic project comprising over 150 hours of performance at the piano. <a href="#about" class="pull-xs-right">About the work...</a></div>
+            <div class="clearfix"></div>
+          </div>
+        </section>
 
       </header>
 

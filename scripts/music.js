@@ -23,9 +23,13 @@ new Vue({
   methods: {
     playSong: function(title, id) {
 
+      if (this.audio) {
+        this.audio.pause();
+      }
+      
       this.playing = id;
       this.audio = new Audio('http://music-and-the-mind-of-the-world.s3.amazonaws.com/780119.mp3');
-      var now = new Date();
+      this.currentTime = '';
 
       this.audio.onplaying = function(event) {
         this.totalTime = createTime(event.currentTarget.duration);
@@ -34,7 +38,7 @@ new Vue({
       this.audio.ontimeupdate = function(event) {
         this.currentTime = createTime(event.currentTarget.currentTime);
         this.elapsedPercentage = ((event.currentTarget.currentTime / event.currentTarget.duration) * 100).toFixed(2);
-        console.log(this.elapsedPercentage);
+        console.log(this.playing);
       }.bind(this);
 
       this.audio.play();
@@ -42,10 +46,10 @@ new Vue({
 
     },
     stopSong: function() {
+
+            // document.getElementsByTagName("audio").pause();
       this.audio.pause();
       this.playing = '';
-      clearInterval(this.timer);
-
       this.title = 'nothin';
     }
   }

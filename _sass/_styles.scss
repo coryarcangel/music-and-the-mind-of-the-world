@@ -15,12 +15,35 @@
 
   .navbar-nav {
     .nav-link {
-      color: white;
+      color: black;
       font-size: 15px;
+      padding: 0;
     }
   }
   .song-title, .time-elapsed {
     color: white;
+  }
+}
+
+#intro {
+  h1 {
+    font-size: 0.938rem;
+    font-weight: 700;
+
+    &.title {
+      color: $brand-primary;
+    }
+  }
+
+  p {
+    color: $brand-primary;
+    font-size: 0.813rem;
+    font-weight: 400;
+
+    a {
+      color: black;
+      float: right;
+    }
   }
 }
 
@@ -31,11 +54,14 @@
 }
 
 #main {
-  margin-top: 50px;
+  @include media-breakpoint-up(sm) {
+    margin-top: 50px;
+  }
 }
 
 #about {
   color: $brand-primary;
+  margin-top: 65px;
 
   img {
     margin-top: 2rem;
