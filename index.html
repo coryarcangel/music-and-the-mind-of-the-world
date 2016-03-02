@@ -20,6 +20,7 @@ layout: default
     <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ recording.id }}' }">
       <div class="card-block">
         <p class="small">{{recording.id}}</p>
+        <p class="small now-playing">Now Playing</p>
         <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
         <p class="card-text">{{ recording.Title }}</p>
       </div>
@@ -31,8 +32,11 @@ layout: default
         <button class="btn-audio download">{% include download.svg %}</button>
         {% raw %}
         <div class="progress-bar">
-          <div class="brand-small">{{ currentTime }}|{{ totalTime }}</div>
-          <progress class="progress" value="{{ elapsedPercentage }}" max="100">25%</progress>
+          <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
+            <span class="time-elapsed">{{ currentTime }}</span>
+            <span class="time-total">{{ totalTime }}</span>
+          </div>
+          <progress class="progress progress-info" value="{{ elapsedPercentage }}" max="100">25%</progress>
         </div>
         {% endraw %}
       </div>

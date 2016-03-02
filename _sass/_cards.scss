@@ -19,6 +19,11 @@
 
     .small {
       margin-bottom: 5px;
+      display: inline;
+    }
+
+    .now-playing {
+      display: none;
     }
 
     &.card-recording {
@@ -65,9 +70,18 @@
 
       &.active {
         background-color: $brand-primary;
+        border-bottom: 0;
 
         .small, .card-text {
           color: rgba(255, 255, 255, 0.25);
+        }
+
+        .now-playing {
+          display: inline;
+          color: black;
+          text-transform: uppercase;
+          position: absolute;
+          right: 20px;
         }
 
         .card-title {
@@ -85,6 +99,38 @@
 
         .progress-bar {
           display: block;
+          position: relative;
+
+          progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin-bottom: 0;
+            height: 4px;
+            width: 100%;
+          }
+
+          progress[value]::-webkit-progress-bar {
+            background-color: black;
+            border-radius: 0;
+          }
+
+          progress[value] {
+            background-color: black;
+            border-radius: 0;
+          }
+        }
+
+        .brand-small {
+          position: absolute;
+          bottom: 3px;
+          .time-elapsed {
+            color: white;
+          }
+
+          .time-total {
+            color: black;
+          }
         }
       }
     }
