@@ -21,7 +21,8 @@ new Vue({
     totalTime: '',
     audio: '',
     playing: '',
-    elapsedPercentage: ''
+    elapsedPercentage: '',
+    numberOfTracks: numberOfTracks
   },
   methods: {
     playSong: function(id) {

@@ -78,6 +78,10 @@
   .btn-audio {
     border: none;
     background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .download {
@@ -156,17 +160,31 @@
     height: 50px;
 
     .pause {
-      svg {
-        path {
-          stroke: $brand-primary;
-          opacity: 1;
-        }
+      path {
+        stroke: $brand-primary;
+        opacity: 1;
+      }
+    }
+
+    .play {
+      path {
+        fill-opacity: 1;
       }
     }
 
     .next {
       position: absolute;
       right: 0;
+    }
+
+    .previous, .next {
+      &.inactive {
+        pointer-events: none;
+
+        path {
+          opacity: 0.5;
+        }
+      }
     }
 
     .title {
