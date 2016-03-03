@@ -84,9 +84,17 @@
     }
   }
 
+  .play, .pause {
+    position: relative;
+    bottom: -2px;
+    left: 5px;
+    margin-right: 5px;
+  }
+
   .download {
     position: absolute;
-    right: 0px;
+    right: 10px;
+    bottom: 0px;
 
     .svg-download {
       opacity: 0.5;
@@ -158,6 +166,10 @@
   .audio-controls {
     background-color: #f7f6f2;
     height: 50px;
+
+    .play, .pause {
+      position: static;
+    }
 
     .pause {
       path {

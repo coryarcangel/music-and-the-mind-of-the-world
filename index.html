@@ -31,7 +31,7 @@ layout: default
         <button class="btn-audio play" v-show="playing != '{{ recording.id }}'" v-on:click="playSong({{ recording.id }})">{% include play.svg %}</button>
         <button class="btn-audio pause" v-show="playing == '{{ recording.id }}'" v-on:click="stopSong()">{% include pause.svg %}</button>
         <div class="brand-small" v-show="playing != '{{ recording.id }}'">{{recording.Timecode}}</div>
-        <button class="btn-audio download">{% include download.svg %}</button>
+        <a href="http://music-and-the-mind-of-the-world.s3.amazonaws.com/780119.mp3" target="_blank" class="btn-audio download">{% include download.svg %}</a>
         {% raw %}
         <div class="progress-bar">
           <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
@@ -86,7 +86,7 @@ layout: default
 </div>
 
 
-  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p>
+  <!-- <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p> -->
 
 
 </div>
