@@ -9,7 +9,7 @@ layout: default
     {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
     {% assign next_year = site.data.master[forloop.index].Date | date : "%Y" %}
     {% if forloop.first %}
-    <div class="card card-year">
+    <div class="card card-year" id="card-first" data-number-of-tracks="{{ forloop.length }}">
       <div class="card-block">
         <h4 class="card-title">{{ this_year }}</h4>
       </div>
@@ -17,16 +17,18 @@ layout: default
 
     {% endif %}
 
-    <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ recording.id }}' }">
+    <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ recording.id }}' }" id="card-{{ recording.id }}"
+    data-id="{{ recording.id }}" data-title="{{ recording.Title }}" data-date="{{ recording.Date | date: '%A, %B %-d, %Y' }}" data-url="http://music-and-the-mind-of-the-world.s3.amazonaws.com/780119.mp3"
+    >
       <div class="card-block">
-        <p class="small">{{recording.id}}</p>
+        <p class="small">{{recording.ave}}</p>
         <p class="small now-playing">Now Playing</p>
         <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
         <p class="card-text">{{ recording.Title }}</p>
       </div>
 
       <div class="audio-controls">
-        <button class="btn-audio play" v-show="playing != '{{ recording.id }}'" v-on:click="playSong('{{ recording.Date | date: "%A, %B %-d, %Y" }}', '{{ recording.id }}')">{% include play.svg %}</button>
+        <button class="btn-audio play" v-show="playing != '{{ recording.id }}'" v-on:click="playSong({{ recording.id }})">{% include play.svg %}</button>
         <button class="btn-audio pause" v-show="playing == '{{ recording.id }}'" v-on:click="stopSong()">{% include pause.svg %}</button>
         <div class="brand-small" v-show="playing != '{{ recording.id }}'">{{recording.Timecode}}</div>
         <button class="btn-audio download">{% include download.svg %}</button>

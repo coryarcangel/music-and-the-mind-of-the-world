@@ -24,7 +24,7 @@
           {% raw %}
           <ul class="nav navbar-nav list-inline" id="playing">
             <li class="list-inline-item nav-item">NOW PLAYING</li>
-            <li class="list-inline-item nav-item song-title">{{ title }}</li>
+            <li class="list-inline-item nav-item song-title">{{ date }}</li>
             <li class="list-inline-item nav-item"  v-on:click="stopSong"><span class="time-elapsed">{{currentTime}}</span>/{{totalTime}}</li>
           </ul>
           {% endraw %}
@@ -50,12 +50,12 @@
 
       <section class="hidden-sm-up" id="mobile-audio-controls">
         <div class="audio-controls">
-          <button class="btn-audio previous" v-on:click="previousSong()">{% include previous.svg %}</button>
+          <button class="btn-audio previous" v-on:click="previousSong({{ playing }})">{% include previous.svg %}</button>
           <button class="btn-audio play" v-show="playing == ''" v-on:click="playSong()">{% include play.svg %}</button>
           <button class="btn-audio pause" v-show="playing != ''" v-on:click="stopSong()">{% include pause.svg %}</button>
-          <button class="btn-audio next" v-on:click="nextSong('{{ playing }}')">{% include next.svg %}</button>
+          <button class="btn-audio next" v-on:click="nextSong({{ playing }})">{% include next.svg %}</button>
           {% raw %}
-          <span class="title">{{ title }} - {{ playing }}</span>
+          <span class="title">{{ date }}</span>
           <div class="progress-bar">
             <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
               <span class="time-elapsed">{{ currentTime }}</span>

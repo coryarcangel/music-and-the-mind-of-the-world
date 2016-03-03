@@ -8,13 +8,15 @@ function createTime(d) {
 
 var totalLength,
     totalLengthMinutes,
-    totalLengthSeconds;
+    totalLengthSeconds,
+    currentTrack;
 
+var numberOfTracks = document.getElementById('card-first').dataset.numberOfTracks;
 
 new Vue({
   el: '#app',
   data: {
-    title: 'something else goes here',
+    date: '',
     currentTime: '',
     totalTime: '',
     audio: '',
@@ -22,16 +24,17 @@ new Vue({
     elapsedPercentage: ''
   },
   methods: {
-    playSong: function(title, id) {
+    playSong: function(id) {
 
       if (this.audio) {
         this.audio.pause();
       }
 
-      console.log(id);
+      currentTrack = document.getElementById('card-' + id);
+      this.date = currentTrack.dataset.date;
 
       this.playing = id;
-      this.audio = new Audio('http://music-and-the-mind-of-the-world.s3.amazonaws.com/780119.mp3');
+      this.audio = new Audio(currentTrack.dataset.url);
       this.currentTime = '';
 
       this.audio.onplaying = function(event) {
@@ -44,18 +47,22 @@ new Vue({
       }.bind(this);
 
       this.audio.play();
-      this.title = title;
 
     },
     stopSong: function() {
       this.audio.pause();
       this.playing = '';
-      this.title = 'nothin';
+      this.date = '';
     },
-    nextSong: function(id) {
-      console.log(id);
-      this.playing = (Number(id) +1);
-
+    nextSong: function() {
+      if (this.playing < numberOfTracks) {
+        this.playSong(this.playing + 1)
+      }
+    },
+    previousSong: function() {
+      if (this.playing > 1) {
+        this.playSong(this.playing - 1)
+      }
     }
   }
 })
