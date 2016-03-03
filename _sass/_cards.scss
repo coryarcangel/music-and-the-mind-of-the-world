@@ -95,8 +95,8 @@
       height: 16.313rem;
       }
       .card-block {
-        padding-top: 0;
-        padding-bottom: 0;
+        padding: 0;
+        text-align: center;
 
         @include media-breakpoint-up(sm) {
           padding: 1.25rem;

@@ -216,6 +216,12 @@
       width: 100%;
       text-align: center;
       pointer-events: none;
+
+      // media query for iphone 5s and older
+      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+          font-size: 0.7rem;
+          margin-top: 7px;
+        }
     }
 
     .progress-bar {

@@ -18,7 +18,7 @@
     <div id="app">
       <header id="header">
 
-        <nav class="navbar navbar-fixed-top navbar-light bg-faded hidden-xs-down">
+        <nav class="navbar navbar-fixed-top navbar-light bg-faded hidden-sm-down">
           <a href="#" class="navbar-brand">TONY CONRAD<span class="title">MUSIC & THE MIND OF THE WORLD</span></a>
 
           {% raw %}
@@ -33,11 +33,10 @@
           <div class="nav navbar-nav pull-xs-right">
            <a class="nav-item nav-link" href="#about">About the work...</a>
            <a class="nav-item nav-link" href="#" target="_blank">Download</a>
-           <a class="nav-item nav-link" href="#">{% include search.svg %}</a>
          </div>
         </nav>
 
-        <section class="hidden-sm-up" id="intro">
+        <section class="hidden-md-up" id="intro">
           <div class="container">
             <h1>TONY CONRAD</h1>
             <h1 class="title">MUSIC & THE MIND OF THE WORLD</h1>
@@ -48,7 +47,7 @@
 
       </header>
 
-      <section class="hidden-sm-up" id="mobile-audio-controls">
+      <section class="hidden-md-up" id="mobile-audio-controls">
         <div class="audio-controls">
           <button class="btn-audio previous" v-bind:class="{ 'inactive': (playing == '') || (playing == '1') }" v-on:click="previousSong({{ playing }})">{% include previous.svg %}</button>
           <button class="btn-audio play" v-show="playing == ''" v-on:click="playSong()">{% include play.svg %}</button>
