@@ -74,7 +74,11 @@
           .brand-small {
             position: absolute;
             bottom: 3px;
-            margin-left: -25px;
+            margin-left: -26px;
+          }
+
+          .download {
+            bottom: 0;
           }
         }
       }
@@ -86,7 +90,7 @@
       justify-content: center;
       background-color: transparent;
       border: none;
-      height: 5rem;
+      height: 6rem;
       @include media-breakpoint-up(sm) {
       height: 16.313rem;
       }

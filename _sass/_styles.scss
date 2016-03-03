@@ -78,6 +78,7 @@
   .btn-audio {
     border: none;
     background-color: transparent;
+    padding: 10px;
 
     &:focus {
       outline: none;
@@ -91,10 +92,14 @@
     margin-right: 5px;
   }
 
+  .pause {
+    transform: translateX(-5px);
+  }
+
   .download {
     position: absolute;
     right: 10px;
-    bottom: 0px;
+    bottom: -2px;
 
     .svg-download {
       opacity: 0.5;
@@ -106,7 +111,7 @@
   }
 
   .previous {
-    transform: translateY(1px) rotateZ(180deg);
+    transform: translateY(3px) rotateZ(180deg);
   }
 
   .brand-small {
@@ -139,20 +144,17 @@
   progress {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -1px;
     margin-bottom: 0;
     height: 4px;
-    width: 100%;
   }
 
   progress[value]::-webkit-progress-bar {
     background-color: black;
-    border-radius: 0;
   }
 
   progress[value] {
     background-color: black;
-    border-radius: 0;
   }
 }
 
@@ -166,6 +168,10 @@
   .audio-controls {
     background-color: #f7f6f2;
     height: 50px;
+
+    .btn-audio {
+      margin-top: -5px;
+    }
 
     .play, .pause {
       position: static;
