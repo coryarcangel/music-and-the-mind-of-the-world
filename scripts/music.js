@@ -13,7 +13,21 @@ var totalLength,
 
 var numberOfTracks = document.getElementById('card-first').dataset.numberOfTracks;
 
-new Vue({
+
+// var myComponent = new Vue({
+//   el: '#something',
+//   data: {
+//     fruit: 'apple'
+//   },
+//   methods: {
+//     changeFruit: function(data) {
+//       app.fruit = data;
+//     }
+//   }
+// });
+
+
+var app = new Vue({
   el: '#app',
   data: {
     date: '',
@@ -27,42 +41,53 @@ new Vue({
   methods: {
     playSong: function(id) {
 
-      if (this.audio) {
-        this.audio.pause();
+      if (app.audio) {
+        app.audio.pause();
       }
 
       currentTrack = document.getElementById('card-' + id);
-      this.date = currentTrack.dataset.date;
 
-      this.playing = id;
-      this.audio = new Audio(currentTrack.dataset.url);
-      this.currentTime = '';
+      var w = window.innerWidth;
+      var offset = window.innerWidth <= 768 ? -10 : -50;
 
-      this.audio.onplaying = function(event) {
-        this.totalTime = createTime(event.currentTarget.duration);
-      }.bind(this);
+      Velocity(currentTrack, "scroll",  { duration: 1000, offset : offset })
 
-      this.audio.ontimeupdate = function(event) {
-        this.currentTime = createTime(event.currentTarget.currentTime);
-        this.elapsedPercentage = ((event.currentTarget.currentTime / event.currentTarget.duration) * 100).toFixed(2);
-      }.bind(this);
 
-      this.audio.play();
+      app.date = currentTrack.dataset.date;
+
+      app.playing = id;
+      app.audio = new Audio(currentTrack.dataset.url);
+      app.currentTime = '';
+
+
+      app.audio.onplaying = function() {
+        app.totalTime = createTime(this.duration);
+      };
+
+      app.audio.ontimeupdate = function() {
+        console.log('test!');
+        app.currentTime = createTime(this.currentTime);
+        app.elapsedPercentage = ((this.currentTime / this.duration) * 100).toFixed(2);
+      };
+
+      app.audio.play();
+
+
 
     },
     stopSong: function() {
-      this.audio.pause();
-      this.playing = '';
-      this.date = '';
+      app.audio.pause();
+      app.playing = '';
+      app.date = '';
     },
     nextSong: function() {
-      if (this.playing < numberOfTracks) {
-        this.playSong(this.playing + 1)
+      if (app.playing < numberOfTracks) {
+        app.playSong(app.playing + 1)
       }
     },
     previousSong: function() {
-      if (this.playing > 1) {
-        this.playSong(this.playing - 1)
+      if (app.playing > 1) {
+        app.playSong(app.playing - 1)
       }
     }
   }

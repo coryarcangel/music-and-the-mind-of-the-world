@@ -18,6 +18,12 @@
     <div id="app">
       <header id="header">
 
+
+
+
+
+
+
         <nav class="navbar navbar-fixed-top navbar-light bg-faded hidden-sm-down">
           <a href="#" class="navbar-brand">TONY CONRAD<span class="title">MUSIC & THE MIND OF THE WORLD</span></a>
 
@@ -74,12 +80,23 @@
       </main>
 
       <footer>
+
       </footer>
 
 
     </div>
+
+    <div id="something">
+
+      {% raw %}
+        <input v-model="fruit" />
+        <div v-on:click="changeFruit('banana')">SOMETHING! {{fruit}}</div>
+      {% endraw %}
+
+    </div>
   </body>
   <script src="/scripts/vue.min.js" charset="utf-8"></script>
+  <script src="/scripts/velocity.min.js" charset="utf-8"></script>
   <script src="/scripts/music.js" charset="utf-8"></script>
 
 
