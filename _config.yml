@@ -3,6 +3,9 @@ title: Music and the mind of the world
 url: http://familiar.siteleaf.net
 timezone: America/New_York
 collections:
+  people:
+    title: People
+    output: true
   posts:
     title: Posts
     output: true
