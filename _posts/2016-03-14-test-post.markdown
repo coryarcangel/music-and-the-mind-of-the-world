@@ -5,6 +5,7 @@ Instructor: Jim
 Types:
   First Name: Keith
   Last Name: Mancuso
+Person: Keith
 ---
 
 Try this out **here**
