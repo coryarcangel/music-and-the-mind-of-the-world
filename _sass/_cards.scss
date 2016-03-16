@@ -24,6 +24,10 @@
       display: none;
     }
 
+    .card-title {
+      font-family: $font-family-brand;
+    }
+
     &.card-recording {
       box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
       border-bottom: 2px solid #526d84;
