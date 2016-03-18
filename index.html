@@ -18,7 +18,7 @@ layout: default
     {% endif %}
 
     <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ recording.id }}' }" id="card-{{ recording.id }}"
-    data-id="{{ recording.id }}" data-title="{{ recording.Title }}" data-date="{{ recording.Date | date: '%A, %B %-d, %Y' }}" data-url="http://music-and-the-mind-of-the-world.s3.amazonaws.com/780119.mp3"
+    data-id="{{ recording.id }}" data-title="{{ recording.Title }}" data-date="{{ recording.Date | date: '%A, %B %-d, %Y' }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_760619_MMW_256_01.mp3"
     >
       <div class="card-block">
         <p class="small">{{recording.ave}}</p>

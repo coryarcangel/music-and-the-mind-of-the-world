@@ -147,7 +147,7 @@ $font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !def
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
-$font-family-headings:       "NewsGothic-CondBold", Georgia, "Times New Roman", Times, serif !default;
+$font-family-headings:       "NewsGothic-CondBold", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // Pixel value used to responsively scale all typography. Applied to the `<html>` element.
 $font-size-root:             18px !default;

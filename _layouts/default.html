@@ -29,9 +29,9 @@
 
           {% raw %}
           <ul class="nav navbar-nav list-inline" id="playing">
-            <li class="list-inline-item nav-item">NOW PLAYING</li>
-            <li class="list-inline-item nav-item song-title">{{ date }}</li>
-            <li class="list-inline-item nav-item"  v-on:click="stopSong"><span class="time-elapsed">{{currentTime}}</span>/{{totalTime}}</li>
+            <li class="list-inline-item nav-item" id="now-playing">NOW PLAYING</li>
+            <li class="list-inline-item nav-item song-title" id="now-playing-date">{{ date }}</li>
+            <li class="list-inline-item nav-item"  v-on:click="stopSong" id="now-playing-time"><span class="time-elapsed">{{currentTime}}</span>/{{totalTime}}</li>
           </ul>
           {% endraw %}
 

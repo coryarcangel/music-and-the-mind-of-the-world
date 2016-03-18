@@ -29,6 +29,27 @@
   }
 }
 
+#now-playing, #now-playing-time {
+  font-size: 0.625rem;
+}
+
+#now-playing-date {
+  font-size: 0.938rem;
+  text-decoration: underline;
+}
+
+#now-playing {
+  transform: translateY(9px);
+}
+
+#now-playing-time {
+  transform: translateY(5px);
+}
+
+.navbar-nav.pull-xs-right {
+  transform: translateY(5px);
+}
+
 #intro {
   padding-top: 1rem;
   h1 {
@@ -274,4 +295,5 @@
 
 .page-title {
   font-family: $font-family-headings;
+
 }
