@@ -13,6 +13,10 @@
     }
   }
 
+  .navbar-brand, .nav-item {
+    font-family: $font-family-headings;
+  }
+
   .navbar-nav {
     .nav-link {
       color: black;
@@ -266,4 +270,8 @@
 #about-text-wrapper {
   padding-left: 15px;
   max-width: 700px;
+}
+
+.page-title {
+  font-family: $font-family-headings;
 }

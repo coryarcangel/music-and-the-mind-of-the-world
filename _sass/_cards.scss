@@ -24,7 +24,11 @@
       display: none;
     }
 
-    .card-title, .small, .card-text, .brand-small {
+    .card-title {
+      font-family: $font-family-headings;
+    }
+
+    .small, .card-text, .brand-small {
       font-family: $font-family-brand;
     }
 
