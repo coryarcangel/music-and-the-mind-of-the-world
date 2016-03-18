@@ -13,20 +13,6 @@ var totalLength,
 
 var numberOfTracks = document.getElementById('card-first').dataset.numberOfTracks;
 
-
-// var myComponent = new Vue({
-//   el: '#something',
-//   data: {
-//     fruit: 'apple'
-//   },
-//   methods: {
-//     changeFruit: function(data) {
-//       app.fruit = data;
-//     }
-//   }
-// });
-
-
 var app = new Vue({
   el: '#app',
   data: {
