@@ -51,7 +51,6 @@ var app = new Vue({
       };
 
       app.audio.ontimeupdate = function() {
-        console.log('test!');
         app.currentTime = createTime(this.currentTime);
         app.elapsedPercentage = ((this.currentTime / this.duration) * 100).toFixed(2);
       };
@@ -78,3 +77,20 @@ var app = new Vue({
     }
   }
 })
+
+// $(document).ready(function(){
+//   var totalTime;
+//
+//   $( '.card-recording' ).each(function() {
+//
+//     var track = new Audio( $(this).data('url'));
+//     var $this = $(this);
+//
+//     track.addEventListener('loadedmetadata', function() {
+//       totalTime = createTime(track.duration);
+//       $this.find('.audio-controls .brand-small').text(totalTime);
+//     });
+//
+//   });
+//
+// });

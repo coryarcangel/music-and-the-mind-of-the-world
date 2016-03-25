@@ -53,7 +53,7 @@
 
       </header>
 
-      <section class="hidden-md-up" id="mobile-audio-controls">
+      <section id="mobile-audio-controls">
         <div class="audio-controls">
           <button class="btn-audio previous" v-bind:class="{ 'inactive': (playing == '') || (playing == '1') }" v-on:click="previousSong({{ playing }})">{% include previous.svg %}</button>
           <button class="btn-audio play" v-show="playing == ''" v-on:click="playSong()">{% include play.svg %}</button>
@@ -87,6 +87,7 @@
     </div>
 
   </body>
+
   <script src="scripts/vue.min.js" charset="utf-8"></script>
   <script src="scripts/velocity.min.js" charset="utf-8"></script>
   <script src="scripts/music.js" charset="utf-8"></script>
