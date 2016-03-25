@@ -95,20 +95,20 @@
   }
 }
 
+.btn-audio {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .audio-controls {
   position: absolute;
   bottom: 0;
   width: 100%;
-
-  .btn-audio {
-    border: none;
-    background-color: transparent;
-    padding: 10px;
-
-    &:focus {
-      outline: none;
-    }
-  }
 
   .play, .pause {
     position: relative;
@@ -119,20 +119,6 @@
 
   .pause {
     transform: translateX(-5px);
-  }
-
-  .download {
-    position: absolute;
-    right: 10px;
-    bottom: -2px;
-
-    .svg-download {
-      opacity: 0.5;
-      .triangle {
-        transform-origin: center;
-        transform: rotateZ(90deg);
-      }
-    }
   }
 
   .previous {
@@ -159,6 +145,20 @@
 
     .time-total {
       color: black;
+    }
+  }
+}
+
+.download {
+  position: absolute;
+  right: 10px;
+  bottom: -2px;
+
+  .svg-download {
+    opacity: 0.5;
+    .triangle {
+      transform-origin: center;
+      transform: rotateZ(90deg);
     }
   }
 }
