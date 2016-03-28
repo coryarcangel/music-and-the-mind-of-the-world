@@ -11,7 +11,7 @@ var totalLength,
     totalLengthSeconds,
     currentTrack;
 
-var numberOfTracks = document.getElementById('card-first').dataset.numberOfTracks;
+var numberOfTracks = document.getElementById('year-1976').dataset.numberOfTracks;
 
 var app = new Vue({
   el: '#app',
@@ -36,7 +36,7 @@ var app = new Vue({
       var w = window.innerWidth;
       var offset = window.innerWidth <= 768 ? -10 : -50;
 
-      Velocity(currentTrack, "scroll",  { duration: 1000, offset : offset })
+      $(currentTrack).velocity("scroll",  { duration: 1000, offset : offset });
 
 
       app.date = currentTrack.dataset.date;
@@ -78,19 +78,17 @@ var app = new Vue({
   }
 })
 
-// $(document).ready(function(){
-//   var totalTime;
-//
-//   $( '.card-recording' ).each(function() {
-//
-//     var track = new Audio( $(this).data('url'));
-//     var $this = $(this);
-//
-//     track.addEventListener('loadedmetadata', function() {
-//       totalTime = createTime(track.duration);
-//       $this.find('.audio-controls .brand-small').text(totalTime);
-//     });
-//
-//   });
-//
-// });
+
+
+$(document).ready(function(){
+
+  $('.scroll-link').click(function(e){
+    e.preventDefault();
+    var offset = window.innerWidth <= 768 ? -10 : -50;
+    var year = $(this).attr("href");
+    console.log(year);
+    $(year).velocity("scroll",  { duration: 1000, offset : offset })
+
+  });
+
+});

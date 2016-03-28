@@ -5,11 +5,14 @@ layout: default
 <div class="home">
 
   <section id="recordings">
-    {% for recording in site.data.master | sort: 'Date' %}
-    {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
-    {% assign next_year = site.data.master[forloop.index].Date | date : "%Y" %}
+    {% assign recordings = site.data.master | sort: 'Date' %}
+    {% for recording in recordings %}
+
+    {% assign this_year = recording.Date | slice: 0, 4  %}
+    {% assign next_year = recordings[forloop.index].Date | slice: 0, 4 %}
+
     {% if forloop.first %}
-    <div class="card card-year" id="card-first" data-number-of-tracks="{{ forloop.length }}">
+    <div class="card card-year" id="year-{{ this_year }}" data-number-of-tracks="{{ forloop.length }}">
       <div class="card-block">
         <h4 class="card-title">{{ this_year }}</h4>
       </div>
@@ -30,6 +33,7 @@ layout: default
         <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_1.mp3" target="_blank" class="btn-audio download hidden-sm-down">{% include download.svg %}</a>
         <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
         <p class="card-text">{{ recording.Title }}</p>
+
       </div>
 
       <div class="audio-controls">
@@ -48,7 +52,7 @@ layout: default
     </div>
 
     {% if this_year != next_year and forloop.last == false %}
-    <div class="card card-year">
+    <div class="card card-year" id="year-{{ next_year }}">
       <div class="card-block">
         <h4 class="card-title">{{ next_year }}</h4>
       </div>
