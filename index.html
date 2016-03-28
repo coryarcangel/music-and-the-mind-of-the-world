@@ -4,10 +4,16 @@ layout: default
 
 <div class="home">
 
+  {{ page.content }}
+
   <section id="recordings">
     {% for recording in site.data.master | sort: 'Date' %}
+
+
     {% capture this_year %}{{ recording.Date | date: "%Y" }}{% endcapture %}
     {% assign next_year = site.data.master[forloop.index].Date | date : "%Y" %}
+
+
     {% if forloop.first %}
     <div class="card card-year" id="card-first" data-number-of-tracks="{{ forloop.length }}">
       <div class="card-block">
@@ -62,8 +68,11 @@ layout: default
     <div class="row">
       <div class="col-lg-8 col-xl-6">
         <div id="about-text-wrapper">
-            <h2 class="page-title">About the work</h2>
-            {% include_relative _posts/2016-04-25-about.markdown %}
+
+          
+            <h2 class="page-title">{{ site.pages[0].title }}</h2>
+            {{ site.pages[0].content }}
+
         </div>
       </div>
     </div>

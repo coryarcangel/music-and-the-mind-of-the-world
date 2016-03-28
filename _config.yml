@@ -5,23 +5,22 @@ timezone: America/New_York
 collections:
   people:
     title: People
-    output: true
+    output: false
   posts:
     title: Posts
-    output: true
+    output: false
   uploads:
     title: Uploads
-    output: true
+    output: false
 defaults:
 - scope:
     path: ''
     type: posts
   values:
-    layout: post
-    permalink: "/posts/:title/"
+    layout: default
 - scope:
     path: ''
     type: pages
   values:
-    layout: page
+    layout: default
 permalink: pretty
