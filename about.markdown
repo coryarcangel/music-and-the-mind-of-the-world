@@ -1,9 +1,7 @@
 ---
-title: About
+title: ABOUT THE WORK
 date: 2016-03-14 20:38:00 -04:00
 ---
-
-ABOUT THE WORK
 
 In December 1976, Tony Conrad started recording "Music and the Mind of the Word," a gigantic project comprising over 150 hours of performance at the piano.
 
