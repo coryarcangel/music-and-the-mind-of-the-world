@@ -47,6 +47,14 @@
   }
 }
 
+#now-playing, #now-playing-date, #now-playing-time {
+  display: none;
+
+  &.visible {
+    display: inline-block;
+  }
+}
+
 #now-playing, #now-playing-time {
   font-size: 0.625rem;
 }

@@ -53,6 +53,12 @@ var app = new Vue({
         app.elapsedPercentage = ((this.currentTime / this.duration) * 100).toFixed(2);
       };
 
+      app.audio.onended = function() {
+        if (app.playing < numberOfTracks) {
+          app.playSong(app.playing + 1)
+        }
+      };
+
       app.audio.play();
 
     },
