@@ -162,14 +162,16 @@
       .card-title {
         font-size: 6rem;
         margin-bottom: 0;
+        transform: translateY(7px);
 
         @include media-breakpoint-up(md) {
           font-size: 120px;
         }
 
-        @include media-breakpoint-up(sm) {
-          margin-bottom: 0.75rem;
-        }
+        // @include media-breakpoint-up(sm) {
+        //   // margin-bottom: 0.75rem;
+        //   margin-bottom: 0;
+        // }
       }
     }
   }
