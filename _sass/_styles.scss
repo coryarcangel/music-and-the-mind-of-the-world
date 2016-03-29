@@ -17,6 +17,15 @@
 }
 
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $font-family-brand;
+
+  &::after {
+    display: none;
+  }
+
   &.bg-faded {
     background-color: $brand-primary;
   }
@@ -24,18 +33,47 @@
   .navbar-brand {
     font-size: 15px;
     text-decoration: none;
+    line-height: 1;
 
     .title {
       color: white;
-      margin-left: 20px;
+      margin: 0 30px;
+    }
+
+    .dropdown {
+      display: inline-block;
+
+      .dropdown-toggle {
+        width: 3.188rem;
+        height: 1.438rem;
+        border: 0.063rem solid #495c6b;
+        border-radius: 0.25rem;
+        padding: 0;
+        background-color: transparent;
+        color: black;
+        text-transform: uppercase;
+        font-size: 0.938rem;
+        font-weight: 700;
+
+        .btn-text {
+          margin-left: 3px;
+        }
+
+        .btn-text, &::after {
+          opacity: 0.25;
+          transform: translateX(3px);
+        }
+      }
     }
   }
 
-  .navbar-brand, .nav-item {
+  .navbar-brand, #now-playing-date {
     font-family: $font-family-headings;
   }
 
   .navbar-nav {
+    display: flex;
+    align-items: center;
     .nav-link {
       color: black;
       font-size: 15px;
@@ -45,6 +83,7 @@
   .song-title, .time-elapsed {
     color: white;
   }
+
 }
 
 #now-playing, #now-playing-date, #now-playing-time {
@@ -62,18 +101,6 @@
 #now-playing-date {
   font-size: 0.938rem;
   text-decoration: underline;
-}
-
-#now-playing {
-  transform: translateY(9px);
-}
-
-#now-playing-time {
-  transform: translateY(5px);
-}
-
-.navbar-nav.pull-xs-right {
-  transform: translateY(5px);
 }
 
 #intro {

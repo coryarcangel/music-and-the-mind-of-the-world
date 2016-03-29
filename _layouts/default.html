@@ -25,29 +25,20 @@
 
 
         <nav class="navbar navbar-fixed-top navbar-light bg-faded hidden-sm-down">
-          <a href="#" class="navbar-brand">TONY CONRAD<span class="title">MUSIC & THE MIND OF THE WORLD</span></a>
-
-          <ul class="nav navbar-nav list-inline" id="playing">
-            <li class="list-inline-item nav-item">
-              <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="dropdownYear" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Year</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownYear">
-                  {% for year in (1976..1982) %}
-                  <a class="dropdown-item scroll-link" href="#year-{{ year }}">{{ year }}</a>
-                  {% endfor %}
-                </div>
+          <div class="navbar-brand">TONY CONRAD
+            <span class="title">MUSIC & THE MIND OF THE WORLD</span>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownYear" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="btn-text">Year</span></button>
+              <div class="dropdown-menu" aria-labelledby="dropdownYear">
+                {% for year in (1976..1982) %}
+                <a class="dropdown-item scroll-link" href="#year-{{ year }}">{{ year }}</a>
+                {% endfor %}
               </div>
-            </li>
-            <li v-bind:class="{ 'visible': (playing != '') }" class="list-inline-item nav-item" id="now-playing">NOW PLAYING</li>
+            </div>
 
-            {% raw %}
-            <li v-bind:class="{ 'visible': (playing != '') }" class="list-inline-item nav-item song-title" id="now-playing-date">{{ date }}</li>
-            <li v-bind:class="{ 'visible': (playing != '') }" class="list-inline-item nav-item" id="now-playing-time"><span class="time-elapsed">{{currentTime}}</span>/{{totalTime}}</li>
-            {% endraw %}
+          </div>
 
-          </ul>
-
-          <div class="nav navbar-nav pull-xs-right">
+          <div class="nav navbar-nav">
            <a class="nav-item nav-link" href="#about">About the work...</a>
            <a class="nav-item nav-link" href="#" target="_blank">Download</a>
          </div>
