@@ -1,3 +1,21 @@
+@media (min-width: 1650px) {
+  .container {
+      max-width: 1600px;
+  }
+}
+
+@media (min-width: 1940px) {
+  .container {
+      max-width: 1910px;
+  }
+}
+
+@media (min-width: 2280px) {
+  .container {
+      max-width: 2220px;
+  }
+}
+
 .navbar {
   &.bg-faded {
     background-color: $brand-primary;

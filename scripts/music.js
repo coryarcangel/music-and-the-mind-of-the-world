@@ -38,13 +38,11 @@ var app = new Vue({
 
       $(currentTrack).velocity("scroll",  { duration: 1000, offset : offset });
 
-
       app.date = currentTrack.dataset.date;
 
       app.playing = id;
       app.audio = new Audio(currentTrack.dataset.url);
       app.currentTime = '';
-
 
       app.audio.onplaying = function() {
         app.totalTime = createTime(this.duration);
@@ -56,8 +54,6 @@ var app = new Vue({
       };
 
       app.audio.play();
-
-
 
     },
     stopSong: function() {
@@ -77,8 +73,6 @@ var app = new Vue({
     }
   }
 })
-
-
 
 $(document).ready(function(){
 
