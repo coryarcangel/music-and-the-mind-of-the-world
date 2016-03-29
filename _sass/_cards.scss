@@ -163,6 +163,10 @@
         font-size: 6rem;
         margin-bottom: 0;
 
+        @include media-breakpoint-up(md) {
+          font-size: 120px;
+        }
+
         @include media-breakpoint-up(sm) {
           margin-bottom: 0.75rem;
         }
