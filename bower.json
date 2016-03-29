@@ -16,8 +16,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.2",
+    "bootstrap": "^3.3.6",
     "vue": "^1.0.17",
-    "velocity": "^1.2.3"
+    "velocity": "^1.2.3",
+    "jquery": "^2.2.2"
   }
 }
