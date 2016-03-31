@@ -3,6 +3,9 @@ title: Music and the mind of the world
 url: http://mmw.siteleaf.net
 timezone: America/New_York
 collections:
+  logos:
+    title: Logos
+    output: false
   people:
     title: People
     output: false
@@ -11,9 +14,6 @@ collections:
     output: true
   uploads:
     title: Uploads
-    output: false
-  logos:
-    title: Logos
     output: false
 defaults:
 - scope:
