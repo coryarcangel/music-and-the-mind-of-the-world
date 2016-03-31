@@ -27,7 +27,11 @@ and (max-device-width : 1024px)  {
 }
 
 .navbar {
-  display: flex;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
   align-items: center;
   justify-content: space-between;
   font-family: $font-family-brand;
@@ -114,6 +118,10 @@ and (max-device-width : 1024px)  {
 }
 
 #intro {
+  @media (min-width: 768px) {
+    display: none;
+  }
+
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
