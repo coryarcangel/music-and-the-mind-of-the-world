@@ -14,13 +14,19 @@
     overflow: hidden;
     color: rgba(0, 0, 0, 0.25);
     margin: 15px;
+    border: none;
 
     .card-block {
       position: relative;
+      padding-top: 20px;
+      padding-left: 18px;
+      padding-right: 18px;
 
       .small {
         margin-bottom: 5px;
         display: inline;
+        font-size: 10px;
+        letter-spacing: 2px;
       }
 
       .now-playing {
@@ -29,11 +35,12 @@
 
       .card-title {
         font-family: $font-family-headings;
+        font-size: 32px;
       }
 
       .download {
-        right: 0;
-        top: 10px;
+        right: 8px;
+        top: 12px;
       }
     }
 
@@ -48,6 +55,15 @@
 
       .card-title {
         min-height: 100px;
+      }
+
+      .card-text {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      .time-total {
+        transform: translateX(7px);
       }
 
       .progress-bar {

@@ -12,7 +12,8 @@ layout: default
 
     {% assign this_year = recording.Date | slice: 0, 4  %}
     {% assign next_year = recordings[forloop.index].Date | slice: 0, 4 %}
-
+    {% assign timecodeSplit = recording.Timecode | split: ':' %}
+    {% assign dateSplit = recording.Date | split: ', ' %}
 
     {% if forloop.first %}
     <div class="card card-year" id="year-{{ this_year }}" data-number-of-tracks="{{ forloop.length }}">
@@ -34,13 +35,13 @@ layout: default
         <p class="small">{{recording.ouid}}</p>
         <p class="small now-playing">Now Playing</p>
         <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_1.mp3" target="_blank" class="btn-audio download hidden-sm-down">{% include download.svg %}</a>
-        <h4 class="card-title">{{ recording.Date | date: "%A, %B %-d, %Y" }}</h4>
+        <h4 class="card-title">{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}</h4>
         <p class="card-text">{{ recording.Title }}</p>
 
       </div>
 
       <div class="audio-controls">
-        <div class="brand-small" v-show="playing != '{{ recording.id }}'">{{recording.Timecode}}</div>
+        <div class="brand-small time-total" v-show="playing != '{{ recording.id }}'">{{ timecodeSplit[0] }}:{{ timecodeSplit[1] }}</div>
         {% raw %}
         <div class="progress-bar">
           <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
