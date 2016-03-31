@@ -154,7 +154,13 @@ and (max-device-width : 1024px)  {
 
   p {
     font-family: $font-family-brand;
-    line-height: 25px;
+    font-size: 13px;
+    line-height: 18px;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 }
 
