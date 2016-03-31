@@ -80,6 +80,16 @@ layout: default
     </div>
 
   </section>
+
+  <section id="logos">
+
+    {% for logo in site.logos %}
+    <a href="{{ logo.url }}">
+      <img src="{{ logo.image_path }}" alt="{{ logo.title }}">
+    </a>
+    {% endfor %}
+  </section>
+
 </div>
 
 
