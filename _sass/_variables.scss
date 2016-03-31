@@ -108,7 +108,7 @@ $grid-breakpoints: (
   // Extra small screen / phone
   xs: 0,
   // Small screen / phone
-  sm: 660px,
+  sm: 768px,
   // Medium screen / tablet
   md: 769px,
   // Large screen / desktop
@@ -121,11 +121,11 @@ $grid-breakpoints: (
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
-
+// alt md: 660px
 $container-max-widths: (
-  sm: 660px,
-  md: 660px,
-  lg: 970px,
+  sm: 761px,
+  md: 768px,
+  lg: 1003px,
   xl: 1300px
 ) !default;
 

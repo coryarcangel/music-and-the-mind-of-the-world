@@ -16,6 +16,15 @@
     margin: 15px;
     border: none;
 
+    //iPad
+    @media only screen
+    and (min-width : 768px)
+    and (max-width : 1024px)  {
+      width: 12.325rem;
+      height: 13.013rem;
+      margin: 10px;
+    }
+
     .card-block {
       position: relative;
       padding-top: 20px;
@@ -55,11 +64,27 @@
 
       .card-title {
         min-height: 100px;
+
+        //iPad
+        @media only screen
+        and (min-width : 768px)
+        and (max-width : 1024px)  {
+          font-size: 26px;
+          margin-bottom: 0;
+        }
       }
 
       .card-text {
         font-size: 16px;
         line-height: 20px;
+
+        //iPad
+        @media only screen
+        and (min-width : 768px)
+        and (max-width : 1024px)  {
+          font-size: 14px;
+          line-height: 18px;
+        }
       }
 
       .time-total {
@@ -162,10 +187,23 @@
       justify-content: center;
       background-color: transparent;
       border: none;
-      height: 6rem;
-      @include media-breakpoint-up(sm) {
-      height: 16.313rem;
+      @media (max-width: 656px) {
+        height: 6rem;
       }
+
+      @include media-breakpoint-up(lg) {
+        height: 16.313rem;
+      }
+
+      //iPad
+      @media only screen
+      and (min-width : 768px)
+      and (max-width : 1024px)  {
+        width: 12.325rem;
+        height: 13.013rem;
+        margin: 10px;
+      }
+
       .card-block {
         padding: 0;
         text-align: center;
@@ -180,8 +218,15 @@
         margin-bottom: 0;
         transform: translateY(7px);
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
           font-size: 120px;
+        }
+
+        //iPad
+        @media only screen
+        and (min-width : 768px)
+        and (max-width : 1024px)  {
+          font-size: 6rem;
         }
 
         // @include media-breakpoint-up(sm) {
