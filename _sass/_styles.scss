@@ -142,9 +142,9 @@
   color: $brand-primary;
   padding-top: 65px;
 
-  img {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  p {
+    font-family: $font-family-brand;
+    line-height: 25px;
   }
 }
 
