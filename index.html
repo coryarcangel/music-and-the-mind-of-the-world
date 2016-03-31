@@ -28,7 +28,7 @@ layout: default
     data-title="{{ recording.Title }}" data-date="{{ recording.Date | date: '%A, %B %-d, %Y' }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.id }}.mp3"
     >
 
-      <button class="btn-audio play" v-show="playing != '{{ forloop.index }}'" v-on:click="playSong({{ recording.id }})">{% include play.svg %}</button>
+      <button class="btn-audio play" v-show="playing != '{{ forloop.index }}'" v-on:click="playSong({{ forloop.index }})">{% include play.svg %}</button>
       <button class="btn-audio pause" v-show="playing == '{{ forloop.index }}'" v-on:click="stopSong()">{% include pause.svg %}</button>
 
       <div class="card-block">
