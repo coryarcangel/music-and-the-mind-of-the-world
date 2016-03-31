@@ -12,7 +12,7 @@ layout: default
 
     {% assign this_year = recording.Date | slice: 0, 4  %}
     {% assign next_year = recordings[forloop.index].Date | slice: 0, 4 %}
-    {% assign timecodeSplit = recording.Timecode | split: ':' %}
+    {% assign totalTimeSplit = recording.Timecode | split: ':' %}
     {% assign dateSplit = recording.Date | split: ', ' %}
 
     {% if forloop.first %}
@@ -41,7 +41,7 @@ layout: default
       </div>
 
       <div class="audio-controls">
-        <div class="brand-small time-total" v-show="playing != '{{ recording.id }}'">{{ timecodeSplit[0] }}:{{ timecodeSplit[1] }}</div>
+        <div class="brand-small time-total" v-show="playing != '{{ recording.id }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
         {% raw %}
         <div class="progress-bar">
           <div class="brand-small" style="left: {{ elapsedPercentage }}%;">

@@ -27,7 +27,7 @@
   }
 
   &.bg-faded {
-    background-color: $brand-primary;
+    background-color: rgba($brand-primary, 0.9);
   }
 
   .navbar-brand {
