@@ -279,7 +279,7 @@ and (max-device-width : 1024px)  {
   z-index: 99999;
 
   .audio-controls {
-    background-color: #f7f6f2;
+    background-color: rgba(#f7f6f2, 0.9);
     height: 50px;
 
     .btn-audio {
@@ -346,11 +346,11 @@ and (max-device-width : 1024px)  {
       }
 
       progress[value]::-webkit-progress-bar {
-        background-color: $brand-primary;
+        background-color: rgba($brand-primary, 0.9);
       }
 
       progress[value] {
-        background-color: $brand-primary;
+        background-color: rgba($brand-primary, 0.9);
       }
     }
 
