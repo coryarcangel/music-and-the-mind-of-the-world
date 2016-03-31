@@ -114,26 +114,38 @@ and (max-device-width : 1024px)  {
 }
 
 #intro {
-  padding-top: 1rem;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+
   h1 {
     font-size: 0.938rem;
     font-weight: 700;
+    font-family: $font-family-headings;
+    margin-bottom: 2px;
 
     &.title {
       color: $brand-primary;
+      margin-bottom: 4px;
     }
   }
 
-  p {
-    color: $brand-primary;
-    font-size: 0.813rem;
-    font-weight: 400;
-
-    a {
-      color: black;
-      float: right;
-    }
+  .intro-text {
+    font-family: $font-family-brand;
+    font-size: 13px;
+    line-height: 18px;
   }
+
+  // p {
+  //   color: $brand-primary;
+  //   font-size: 0.813rem;
+  //   font-weight: 400;
+  //
+  //   a {
+  //     color: black;
+  //     float: right;
+  //   }
+  // }
 }
 
 .page-title{
