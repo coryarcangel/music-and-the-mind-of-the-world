@@ -40,6 +40,8 @@ Along the way, there were certain figures that I picked up and carried forward. 
 
 But music flows through time, and it's difficult to achieve critical distance in the course of live performance. I was expecting a lot, so I shouldn't have been surprised when I didn't get very much in the way of critical approbation. The scant response that my performance solicited was negative. The lack of response that predominated spoke to me even more clearly; I was on my own it seemed. So I began in 1978 full of confidence, but isolated in my practice.
 
+### Credits
+
 Music and the Mind of the World by Tony Conrad has been published by Arcangel Surfware. 
 
 Editing, copy-editing & transcription: Cory Arcangel, Gil Gentile, Elliot Kaufman, Amanda Schmidt
