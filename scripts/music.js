@@ -89,7 +89,6 @@ var app = new Vue({
         window.addEventListener('mouseup',function (e) {
           window.removeEventListener('mousemove',app.updatePlayhead );
           window.removeEventListener(e.type, arguments.callee);
-
         });
       }
 

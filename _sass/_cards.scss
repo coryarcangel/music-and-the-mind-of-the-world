@@ -48,8 +48,13 @@
       }
 
       .download {
+        position: absolute;
         right: 8px;
         top: 12px;
+
+        .svg-download {
+          opacity: 0.5;
+        }
       }
     }
 

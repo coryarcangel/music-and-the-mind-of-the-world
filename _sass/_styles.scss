@@ -257,16 +257,19 @@ and (max-device-width : 1024px)  {
 }
 
 .download {
-  position: absolute;
-  right: 10px;
-  bottom: -2px;
+
+  text-decoration: none;
 
   .svg-download {
-    opacity: 0.5;
+
     .triangle {
       transform-origin: center;
       transform: rotateZ(90deg);
     }
+  }
+
+  &.hidden {
+    display: none;
   }
 }
 
@@ -302,6 +305,40 @@ and (max-device-width : 1024px)  {
   right: 0;
   z-index: 99999;
 
+  .audio-button-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .button-wrapper-inner {
+
+      position: relative;
+
+      @include media-breakpoint-down(xs) {
+        width: 100%;
+      }
+
+      @include media-breakpoint-up(sm) {
+        min-width: 350px;
+      }
+
+      .title {
+        margin-right: 10px;
+      @include media-breakpoint-down(xs) {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      }
+      .next {
+        float: right;
+      }
+
+      .download {
+        float: right;
+      }
+    }
+  }
+
   .audio-controls {
     background-color: rgba(#f7f6f2, 0.9);
     height: 50px;
@@ -328,8 +365,8 @@ and (max-device-width : 1024px)  {
     }
 
     .next {
-      position: absolute;
-      right: 0;
+      // position: absolute;
+      // right: 0;
     }
 
     .previous, .next {
@@ -345,15 +382,12 @@ and (max-device-width : 1024px)  {
     .title {
       font-family: $font-family-headings;
       font-size: 0.938rem;
-      font-weight: 700;
       text-decoration: underline;
-      position: absolute;
+      // position: absolute;
       top: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
+      // left: 50%;
+      // transform: translateX(-50%);
       text-align: center;
-      pointer-events: none;
 
       // media query for iphone 5s and older
       @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
@@ -381,12 +415,16 @@ and (max-device-width : 1024px)  {
     .brand-small {
       position: absolute;
       bottom: 0;
-      margin-left: -25px;
+      margin-left: -27px;
       z-index: 99999;
 
       .divider {
         background-color: black;
         height: 16px;
+      }
+
+      .time-elapsed, .time-total {
+        font-family: $font-family-brand;
       }
 
       .time-elapsed {
