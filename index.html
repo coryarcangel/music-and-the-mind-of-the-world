@@ -7,8 +7,9 @@ layout: default
 
   <section id="recordings">
 
-    {% assign recordings = site.data.master | sort: 'Date' %}
-    {% for recording in recordings %}
+  {% assign recordings = site.data.master | sort: 'Date' %}
+
+  {% for recording in recordings %}
 
     {% assign this_year = recording.Date | slice: 0, 4  %}
     {% assign next_year = recordings[forloop.index].Date | slice: 0, 4 %}
@@ -23,6 +24,8 @@ layout: default
     </div>
 
     {% endif %}
+
+    {% if recording.Date != "X" %}
 
     <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
     data-title="{{ recording.Title }}" data-date="{{ recording.Date | date: '%A, %B %-d, %Y' }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.id }}.mp3"
@@ -58,12 +61,15 @@ layout: default
     {% if this_year != next_year and forloop.last == false %}
     <div class="card card-year" id="year-{{ next_year }}">
       <div class="card-block">
-        <h4 class="card-title">{{ next_year }}</h4>
+        <h4 class="card-title">{% if next_year == 'X' %}####{% else %}{{ next_year }}{% endif %}</h4>
       </div>
     </div>
     {% endif %}
 
-    {% endfor %}
+    {% endif %}
+
+  {% endfor %}
+
   </section>
 
   <section id="about">
