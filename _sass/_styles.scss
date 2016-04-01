@@ -282,10 +282,16 @@ and (max-device-width : 1024px)  {
 
   progress[value]::-webkit-progress-bar {
     background-color: black;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   progress[value] {
     background-color: black;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
   }
 }
 

@@ -3,10 +3,12 @@
 @mixin progress-variant($color) {
   &[value]::-webkit-progress-value {
     background-color: $color;
+    border-radius: $progress-border-radius;
   }
 
   &[value]::-moz-progress-bar {
     background-color: $color;
+    border-radius: $progress-border-radius;
   }
 
   // IE9
