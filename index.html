@@ -7,14 +7,14 @@ layout: default
 
   <section id="recordings">
 
-  {% assign recordings = site.data.master | sort: 'Date' %}
+  {% assign recordings = site.data.masternew | sort: 'DATE_WITH_PART' %}
 
   {% for recording in recordings %}
 
-    {% assign this_year = recording.Date | slice: 0, 4  %}
-    {% assign next_year = recordings[forloop.index].Date | slice: 0, 4 %}
-    {% assign totalTimeSplit = recording.Timecode | split: ':' %}
-    {% assign dateSplit = recording.Date | split: ', ' %}
+    {% assign this_year = recording.DATE | slice: 0, 4  %}
+    {% assign next_year = recordings[forloop.index].DATE | slice: 0, 4 %}
+    {% assign totalTimeSplit = recording.TIMECODE_ELAPSED | split: ':' %}
+    {% assign dateSplit = recording.DATE | split: ', ' %}
 
     {% if forloop.first %}
     <div class="card card-year" id="year-{{ this_year }}" data-number-of-tracks="{{ forloop.length }}">
@@ -28,23 +28,24 @@ layout: default
     {% if recording.Date != "X" %}
 
     <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
-    data-title="{{ recording.Title }}" data-date="{{ recording.Date | date: '%A, %B %-d, %Y' }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.id }}.mp3"
+    data-title="{{ recording.NOTES }}" data-date="{{ recording.DATE | date: '%A, %B %-d, %Y' }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
     >
 
       <button class="btn-audio play" v-show="playing != '{{ forloop.index }}'" v-on:click="playSong({{ forloop.index }})">{% include play.svg %}</button>
       <button class="btn-audio pause" v-show="playing == '{{ forloop.index }}'" v-on:click="stopSong()">{% include pause.svg %}</button>
 
       <div class="card-block">
-        <p class="small">{{recording.ouid}}</p>
+        <p class="small">MATMOTW_{{recording.MATMOTW}}</p>
         <p class="small now-playing">Now Playing</p>
-        <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_1.mp3" target="_blank" class="btn-audio download hidden-sm-down">{% include download.svg %}</a>
+        <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down">{% include download.svg %}</a>
         <h4 class="card-title">{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}</h4>
-        <p class="card-text">{{ recording.Title }}</p>
+        <p class="card-text">Part {{ recording.MATMOTW_PART }}</p>
+        <p class="card-text">{{ recording.NOTES }}</p>
 
       </div>
 
       <div class="audio-controls">
-        <div class="brand-small time-total" v-show="playing != '{{ recording.id }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
+        <div class="brand-small time-total" v-show="playing != '{{ recording.MATMOTW }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
         {% raw %}
         <div class="progress-bar">
           <div class="brand-small" style="left: {{ elapsedPercentage }}%;">

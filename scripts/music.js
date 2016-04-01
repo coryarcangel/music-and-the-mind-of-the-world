@@ -22,7 +22,8 @@ var app = new Vue({
     audio: '',
     playing: '',
     elapsedPercentage: '',
-    numberOfTracks: numberOfTracks
+    numberOfTracks: numberOfTracks,
+    trackUrl: ''
   },
   methods: {
     playSong: function(id) {
@@ -43,6 +44,7 @@ var app = new Vue({
       app.playing = id;
       app.audio = new Audio(currentTrack.dataset.url);
       app.currentTime = '';
+      app.trackUrl = currentTrack.dataset.url;
 
       app.audio.onplaying = function() {
         app.totalTime = createTime(this.duration);
