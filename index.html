@@ -25,15 +25,11 @@ layout: default
 
     {% endif %}
 
-<<<<<<< HEAD
-    <div class="card card-recording" v-bind:class="{ 'active': activeSong == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
-    data-title="{{ recording.Title }}" data-date="{{ recording.Date | date: '%A, %B %-d, %Y' }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.id }}.mp3"
-=======
+
     {% if recording.Date != "X" %}
 
-    <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
+    <div class="card card-recording" v-bind:class="{ 'active': activeSong == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
     data-title="{{ recording.NOTES }}" data-date="{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
->>>>>>> origin/gh-pages
     >
 
       <button class="btn-audio play" v-show="activeSong != '{{ forloop.index }}' " v-on:click="playSong({{ forloop.index }})">
@@ -48,24 +44,17 @@ layout: default
         <p class="small now-playing">Now Playing</p>
         <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down" download>{% include download.svg %}</a>
         <h4 class="card-title">{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}</h4>
-<<<<<<< HEAD
-        <p class="card-text">{{ recording.Title }}
+        <p class="card-text">{{ recording.Title }}</p>
 
-        {{audio|jsonify}}
-        </p>
-=======
+
         <p class="card-text">Part {{ recording.MATMOTW_PART }}</p>
         <p class="card-text">{{ recording.NOTES }}</p>
->>>>>>> origin/gh-pages
 
       </div>
 
       <div class="audio-controls">
-<<<<<<< HEAD
-        <div class="brand-small time-total" v-show="activeSong != '{{ recording.id }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
-=======
-        <div class="brand-small time-total" v-show="playing != '{{ recording.MATMOTW }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
->>>>>>> origin/gh-pages
+
+        <div class="brand-small time-total" v-show="activeSong != '{{ recording.MATMOTW }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
         {% raw %}
         <div class="progress-bar">
           <div class="brand-small" style="left: {{ elapsedPercentage }}%;">

@@ -94,7 +94,7 @@
           </div>
 
           {% raw %}
-          <div class="progress-bar">
+          <div class="progress-bar" v-on:mousedown="mouseDown">
 
             <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
               <span class="time-elapsed">{{ currentTime }}</span>
