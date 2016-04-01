@@ -20,7 +20,7 @@ var app = new Vue({
     currentTime: '',
     totalTime: '',
     audio: '',
-    playing: '',
+    activeSong: '',
     elapsedPercentage: '',
     numberOfTracks: numberOfTracks,
     trackUrl: ''
@@ -41,10 +41,16 @@ var app = new Vue({
 
       app.date = currentTrack.dataset.date;
 
-      app.playing = id;
-      app.audio = new Audio(currentTrack.dataset.url);
-      app.currentTime = '';
-      app.trackUrl = currentTrack.dataset.url;
+      if (app.activeSong != id) {
+        // this restarts the song
+        app.activeSong = id;
+        app.audio = new Audio(currentTrack.dataset.url);
+        app.currentTime = '';
+        app.trackUrl = currentTrack.dataset.url;
+      }
+
+
+
 
       app.audio.onplaying = function() {
         app.totalTime = createTime(this.duration);
@@ -56,27 +62,57 @@ var app = new Vue({
       };
 
       app.audio.onended = function() {
-        if (app.playing < numberOfTracks) {
-          app.playSong(app.playing + 1)
+        if (app.activeSong < numberOfTracks) {
+          app.playSong(app.activeSong + 1)
         }
       };
+
 
       app.audio.play();
 
     },
+
+    updatePlayhead:function(event) {
+
+      if (event.type == 'mouseup') {
+        console.log('up!', event);
+      }
+
+      var percent = (event.pageX / window.innerWidth)*100
+      app.elapsedPercentage = percent;
+
+      var newTime  = app.audio.duration * (percent/100);
+      app.audio.currentTime = newTime.toFixed(0);
+    },
+    mouseDown:function(event) {
+      if (app.activeSong) {
+
+        app.updatePlayhead(event);
+
+        window.addEventListener('mousemove',app.updatePlayhead);
+
+        window.addEventListener('mouseup',function (e) {
+          window.removeEventListener('mousemove',app.updatePlayhead );
+          window.removeEventListener(e.type, arguments.callee);
+        });
+      }
+
+    },
     stopSong: function() {
+      console.log('pause');
       app.audio.pause();
-      app.playing = '';
+      app.audio.currentTime = 0;
+      app.activeSong = '';
       app.date = '';
     },
     nextSong: function() {
-      if (app.playing < numberOfTracks) {
-        app.playSong(app.playing + 1)
+      if (app.activeSong < numberOfTracks) {
+        app.playSong(app.activeSong + 1)
       }
     },
     previousSong: function() {
-      if (app.playing > 1) {
-        app.playSong(app.playing - 1)
+      if (app.activeSong > 1) {
+        app.playSong(app.activeSong - 1)
       }
     }
   }
