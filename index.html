@@ -4,7 +4,6 @@ layout: default
 
 <div class="home">
 
-
   <section id="recordings">
 
   {% assign recordings = site.data.master | sort: 'DATE_WITH_PART' %}
@@ -90,19 +89,19 @@ layout: default
             <h2 class="page-title">{{ site.pages[0].title }}</h2>
             {{ site.pages[0].content }}
 
+            <div id="logos">
+
+              {% for logo in site.logos %}
+              <a href="{{ logo.logoUrl }}" target="_blank">
+                <img src="{{ logo.image_path }}" alt="{{ logo.title }}">
+              </a>
+              {% endfor %}
+            </div>
+
         </div>
       </div>
     </div>
 
-  </section>
-
-  <section id="logos">
-
-    {% for logo in site.logos %}
-    <a href="{{ logo.url }}">
-      <img src="{{ logo.image_path }}" alt="{{ logo.title }}">
-    </a>
-    {% endfor %}
   </section>
 
 </div>
