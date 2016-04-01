@@ -265,6 +265,7 @@ and (max-device-width : 1024px)  {
     .triangle {
       transform-origin: center;
       transform: rotateZ(90deg);
+      -moz-transform: rotateZ(90deg) translateY(1px) translateX(-1px);
     }
   }
 
