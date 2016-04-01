@@ -56,13 +56,15 @@ and (max-device-width : 1024px)  {
 
     .dropdown {
       display: inline-block;
+      top: -2px;
 
       .dropdown-toggle {
-        width: 3.188rem;
-        height: 1.438rem;
+        height: 23px;
+        // width: 3.188rem;
+        // height: 1.438rem;
         border: 0.063rem solid #495c6b;
         border-radius: 0.25rem;
-        padding: 0;
+        padding: 0 5px;
         background-color: transparent;
         color: black;
         text-transform: uppercase;
@@ -71,11 +73,17 @@ and (max-device-width : 1024px)  {
 
         .btn-text {
           margin-left: 3px;
+          font-size: 15px;
         }
 
         .btn-text, &::after {
           opacity: 0.25;
-          transform: translateX(3px);
+          transform: translateX(3px) translateY(-2px);
+          display: inline-block;
+        }
+
+        &:after {
+          margin-left: 4px;
         }
       }
     }
@@ -90,12 +98,17 @@ and (max-device-width : 1024px)  {
     align-items: center;
     .nav-link {
       color: black;
-      font-size: 15px;
+      font-size: 12px;
       padding: 0;
     }
   }
   .song-title, .time-elapsed {
     color: white;
+  }
+
+  .nav-right {
+    position: relative;
+    top: -1px;
   }
 
 }

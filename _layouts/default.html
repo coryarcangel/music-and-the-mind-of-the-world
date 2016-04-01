@@ -7,7 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Music and the Mind of the World | Tony Conrad</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="description" content="From 1976 to 1982, Tony Conrad created “Music and the Mind of the World,” a piano composition comprising over 200 hours of recorded music. During this time everything Conrad played on the piano was recorded (with the incidental exception of perhaps three or four hours).">
+    <meta name="author" content="Tony Conrad" />
+    <meta name="publisher" content="Arcangel Surfware" />
+    <meta name="google-site-verification" content="EcImjEAf4e_t5nOQK0vLHcOFNYu-YQWBf-z3I_BSTsk" />
+
+    <!-- facebook meta tags -->
+    <meta property="og:title" content="Music and the Mind of the World | Tony Conrad"/>
+    <meta property="og:description" content="From 1976 to 1982, Tony Conrad created “Music and the Mind of the World,” a piano composition comprising over 200 hours of recorded music. During this time everything Conrad played on the piano was recorded (with the incidental exception of perhaps three or four hours)."/>
+
+    <meta property="og:image" content="{{ site.url }}/images/piano.jpg"/>
+
+    <meta property="og:url" content="{{ site.url }}"/>
+
+    <meta property="og:site_name" content="Music and the Mind of the World | Tony Conrad"/>
+    <meta property="og:type" content="website"/>
+
+    <!-- twitter cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Music and the Mind of the World | Tony Conrad" />
+    <meta name="twitter:description" content="{{ description is defined ? description|striptags[:160] : seo.description|e }}" />
+
+    <meta name="twitter:image" content="{{ site.url }}/images/piano.jpg" />
+
+    <meta name="twitter:url" content="From 1976 to 1982, Tony Conrad created “Music and the Mind of the World,” a piano composition comprising over 200 hours of recorded music. During this time everything Conrad played on the piano was recorded (with the incidental exception of perhaps three or four hours)." />
 
     <link rel="stylesheet" href="{{ "css/main.css" | prepend: site.baseurl }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -32,7 +55,7 @@
 
           </div>
 
-          <div class="nav navbar-nav">
+          <div class="nav navbar-nav nav-right">
            <a class="nav-item nav-link" href="#about">About the work...</a>
            <a class="nav-item nav-link" href="#" target="_blank">Download</a>
          </div>
