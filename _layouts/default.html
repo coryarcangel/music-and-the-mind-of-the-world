@@ -84,11 +84,11 @@
               <button class="btn-audio next"  v-bind:class="{ 'inactive': (playing == '') || (playing == numberOfTracks) }" v-on:click="nextSong({{ playing }})">{% include next.svg %}</button>
 
               {% raw %}
-              <a href="{{ trackUrl }}" target="_blank" class="btn-audio download hidden-sm-down" v-bind:class="{ 'hidden': (playing == '') }">
+              <a href="{{ trackUrl }}" target="_blank" class="btn-audio download hidden-sm-down" v-bind:class="{ 'hidden': (playing == '') }" download>
               {% endraw %}
                 {% include download.svg %}
               </a>
-              
+
             </div>
           </div>
 

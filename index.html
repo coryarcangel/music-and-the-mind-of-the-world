@@ -28,7 +28,7 @@ layout: default
     {% if recording.Date != "X" %}
 
     <div class="card card-recording" v-bind:class="{ 'active': playing == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
-    data-title="{{ recording.NOTES }}" data-date="{{ recording.DATE | date: '%A, %B %-d, %Y' }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
+    data-title="{{ recording.NOTES }}" data-date="{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
     >
 
       <button class="btn-audio play" v-show="playing != '{{ forloop.index }}'" v-on:click="playSong({{ forloop.index }})">{% include play.svg %}</button>
@@ -37,7 +37,7 @@ layout: default
       <div class="card-block">
         <p class="small">MATMOTW_{{recording.MATMOTW}}</p>
         <p class="small now-playing">Now Playing</p>
-        <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down">{% include download.svg %}</a>
+        <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down" download>{% include download.svg %}</a>
         <h4 class="card-title">{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}</h4>
         <p class="card-text">Part {{ recording.MATMOTW_PART }}</p>
         <p class="card-text">{{ recording.NOTES }}</p>
