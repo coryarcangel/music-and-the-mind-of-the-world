@@ -7,4 +7,3 @@ logos:
   title: Github
   url: http://github.com
 ---
-
