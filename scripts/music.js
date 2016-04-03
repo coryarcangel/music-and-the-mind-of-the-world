@@ -87,6 +87,8 @@ var app = new Vue({
     mouseDown:function(event) {
       if (app.activeSong) {
 
+        event.preventDefault();
+
         app.updatePlayhead(event);
 
         window.addEventListener('mousemove',app.updatePlayhead);
