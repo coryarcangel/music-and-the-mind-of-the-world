@@ -71,6 +71,10 @@ var app = new Vue({
       if (! $('#footer-audio-controls .audio-controls').hasClass('visible')) {
         $('#footer-audio-controls .audio-controls').addClass('visible');
       }
+
+      // $('#title-inner-wrapper')
+      // .velocity({ left: '75px' }, { loop: true })
+      // .velocity({ left: '-75px' }, { loop: true });
     },
 
     updatePlayhead:function(event) {

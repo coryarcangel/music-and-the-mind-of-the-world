@@ -98,9 +98,13 @@
               <button class="btn-audio play" v-show="activeSong == '' || paused == 'true'" v-on:click="playSong( activeSong )">{% include play.svg %}</button>
               <button class="btn-audio pause" v-show="activeSong != '' && paused == 'false'" v-on:click="pauseSong()">{% include pause.svg %}</button>
               {% raw %}
-              <a class="title scroll-link" href="#card-{{ activeSong }}">{{ date }}
-
-                <span class="part" v-bind:class="{ 'hidden': (part == '') }"> Part {{ part }}</span>
+              <div id="title-outer-wrapper">
+                <div id="title-inner-wrapper">
+                  <a class="title scroll-link" href="#card-{{ activeSong }}">{{ date }}
+                    <span class="part" v-bind:class="{ 'hidden': (part == '') }"> Part {{ part }}</span>
+                  </a>
+                </div>
+              </div>
                 {% endraw %}
 
               </a>

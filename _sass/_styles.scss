@@ -306,15 +306,6 @@ and (max-device-width : 1024px)  {
   right: 0;
   z-index: 99999;
 
-  .audio-controls {
-    transform: translateY(50px);
-    transition: transform 0.5s;
-
-    &.visible {
-    transform: translateY(0);
-    }
-  }
-
   .audio-button-wrapper {
     display: flex;
     justify-content: center;
@@ -328,7 +319,7 @@ and (max-device-width : 1024px)  {
       }
 
       @include media-breakpoint-up(sm) {
-        min-width: 350px;
+        min-width: 335px;
       }
 
       .title {
@@ -360,6 +351,12 @@ and (max-device-width : 1024px)  {
   .audio-controls {
     background-color: rgba(#f7f6f2, 0.9);
     height: 50px;
+    transform: translateY(50px);
+    transition: transform 0.5s;
+
+    &.visible {
+    transform: translateY(0);
+    }
 
     .btn-audio {
       margin-top: -5px;
@@ -455,7 +452,28 @@ and (max-device-width : 1024px)  {
       }
     }
   }
+
+  #title-outer-wrapper {
+    width: 175px;
+    height: 22px;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+
+    #title-inner-wrapper {
+      // display: block;
+      position: absolute;
+      white-space: nowrap;
+      // animation: rightThenLeft 4s infinite;
+    }
+  }
 }
+
+// @keyframes rightThenLeft {
+//     0%   {left:0;}
+//     50%  {left:-100%;}
+//     100% {left:0;}
+// }
 
 #about-wrapper {
   padding-left: 15px;
