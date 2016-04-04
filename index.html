@@ -25,7 +25,7 @@ layout: default
     {% endif %}
 
 
-    {% if recording.Date != "X" %}
+    {% if dateSplit[0] != "X" %}
 
     <div class="card card-recording" v-bind:class="{ 'active': activeSong == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
     data-title="{{ recording.NOTES }}" data-date="{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}" data-part="{{ recording.MATMOTW_PART }}" data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
@@ -67,10 +67,10 @@ layout: default
       </div>
     </div>
 
-    {% if this_year != next_year and forloop.last == false %}
+    {% if this_year != next_year and forloop.last == false and next_year != 'X' %}
     <div class="card card-year" id="year-{{ next_year }}">
       <div class="card-block">
-        <h4 class="card-title">{% if next_year == 'X' %}####{% else %}{{ next_year }}{% endif %}</h4>
+        <h4 class="card-title">{{ next_year }}</h4>
       </div>
     </div>
     {% endif %}

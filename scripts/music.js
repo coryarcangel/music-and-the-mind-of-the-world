@@ -30,7 +30,7 @@ var app = new Vue({
   methods: {
     playSong: function(id) {
       app.paused = 'false';
-      // console.log(app.paused);
+      console.log(id);
       if (app.audio) {
         app.audio.pause();
       }
@@ -108,12 +108,13 @@ var app = new Vue({
 
       app.audio.pause();
       app.paused = 'true';
-      console.log(app.paused);
+
       // app.audio.currentTime = 0;
       // app.activeSong = '';
       // app.date = '';
     },
     nextSong: function() {
+      console.log(app.activeSong + ' ' + numberOfTracks);
       if (app.activeSong < numberOfTracks) {
         app.playSong(app.activeSong + 1)
       }
