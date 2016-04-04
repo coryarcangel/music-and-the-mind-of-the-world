@@ -1,5 +1,5 @@
 ---
-title: Credits
+title: CREDITS
 date: 2016-04-04 11:31:00 -04:00
 ---
 
