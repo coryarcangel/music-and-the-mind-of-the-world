@@ -96,10 +96,14 @@
             <div class="button-wrapper-inner">
               <button class="btn-audio previous" v-bind:class="{ 'inactive': (activeSong == '') || (activeSong == '1') }" v-on:click="previousSong({{ playing }})">{% include previous.svg %}</button>
               <button class="btn-audio play" v-show="activeSong == ''" v-on:click="playSong()">{% include play.svg %}</button>
-              <button class="btn-audio pause" v-show="activeSong != ''" v-on:click="stopSong()">{% include pause.svg %}</button>
+              <button class="btn-audio pause" v-show="activeSong != ''" v-on:click="pauseSong()">{% include pause.svg %}</button>
               {% raw %}
-              <a class="title scroll-link" href="#card-{{ activeSong }}">{{ date }}</a>
-              {% endraw %}
+              <a class="title scroll-link" href="#card-{{ activeSong }}">{{ date }}
+
+                <span class="part" v-bind:class="{ 'hidden': (part == '') }"> Part {{ part }}</span>
+                {% endraw %}
+
+              </a>
 
               <button class="btn-audio next"  v-bind:class="{ 'inactive': (activeSong == '') || (activeSong == numberOfTracks) }" v-on:click="nextSong({{ playing }})">{% include next.svg %}</button>
 

@@ -324,11 +324,19 @@ and (max-device-width : 1024px)  {
 
       .title {
         margin-right: 10px;
-      @include media-breakpoint-down(xs) {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+
+        @include media-breakpoint-down(xs) {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
+
+      .part {
+
+        &.hidden {
+          display: none;
+        }
       }
       .next {
         float: right;

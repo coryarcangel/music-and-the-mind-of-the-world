@@ -162,6 +162,13 @@
             bottom: 0;
           }
         }
+
+        .play {
+          path {
+            fill-opacity: 1;
+            fill: white;
+          }
+        }
       }
 
       .play, .pause {

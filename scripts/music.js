@@ -17,17 +17,20 @@ var app = new Vue({
   el: '#app',
   data: {
     date: '',
+    part: '',
     currentTime: '',
     totalTime: '',
     audio: '',
     activeSong: '',
     elapsedPercentage: '',
     numberOfTracks: numberOfTracks,
-    trackUrl: ''
+    trackUrl: '',
+    paused: 'false'
   },
   methods: {
     playSong: function(id) {
-
+      app.paused = 'false';
+      // console.log(app.paused);
       if (app.audio) {
         app.audio.pause();
       }
@@ -40,6 +43,7 @@ var app = new Vue({
       $(currentTrack).velocity("scroll",  { duration: 1000, offset : offset });
 
       app.date = currentTrack.dataset.date;
+      app.part = currentTrack.dataset.part;
 
       if (app.activeSong != id) {
         // this restarts the song
@@ -100,12 +104,14 @@ var app = new Vue({
       }
 
     },
-    stopSong: function() {
-      console.log('pause');
+    pauseSong: function() {
+
       app.audio.pause();
-      app.audio.currentTime = 0;
-      app.activeSong = '';
-      app.date = '';
+      app.paused = 'true';
+      console.log(app.paused);
+      // app.audio.currentTime = 0;
+      // app.activeSong = '';
+      // app.date = '';
     },
     nextSong: function() {
       if (app.activeSong < numberOfTracks) {
