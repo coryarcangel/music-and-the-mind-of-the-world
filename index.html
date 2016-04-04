@@ -14,6 +14,15 @@ layout: default
     {% assign next_year = recordings[forloop.index].DATE | slice: 0, 4 %}
     {% assign totalTimeSplit = recording.TIMECODE_ELAPSED | split: ':' %}
     {% assign dateSplit = recording.DATE | split: ', ' %}
+    {% assign nextYearString = recordings[forloop.index].DATE %}
+
+    {% if this_year != next_year and forloop.last == false and this_year != 'Unkn' and next_year != 'Unkn' and next_year != 'X' %}
+      {% assign needYearCard = 'true' %}
+    {% elsif this_year != next_year and forloop.last == false and nextYearString == 'Unknown' %}
+      {% assign needYearCard = 'true' %}
+    {% else %}
+      {% assign needYearCard = 'false' %}
+    {% endif %}
 
     {% if forloop.first %}
     <div class="card card-year" id="year-{{ this_year }}" data-number-of-tracks="{{ forloop.length }}">
@@ -42,12 +51,20 @@ layout: default
         <p class="small">MATMOTW_{{recording.MATMOTW}}</p>
         <p class="small now-playing">Now Playing</p>
         <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down" download>{% include download.svg %}</a>
-        <h4 class="card-title">{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}</h4>
+        <h4 class="card-title">
+          {% if dateSplit[0] == 'Unknown' %}
+            {{ recording.DATE }}
+          {% else %}
+            {{ dateSplit[0] | date: "%A, %B %-d, %Y" }}
+            {% if dateSplit[1] %}
+              –{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}
+            {% endif %}
+          {% endif %}
+        </h4>
         {% if recording.MATMOTW_PART != '' %}
         <p class="card-text card-subtitle">Part {{ recording.MATMOTW_PART }}</p>
         {% endif %}
         <p class="card-text card-notes">{{ recording.NOTES }}</p>
-
 
       </div>
 
@@ -67,7 +84,7 @@ layout: default
       </div>
     </div>
 
-    {% if this_year != next_year and forloop.last == false and next_year != 'X' %}
+    {% if needYearCard == 'true' %}
     <div class="card card-year" id="year-{{ next_year }}">
       <div class="card-block">
         <h4 class="card-title">{% if next_year == 'Unkn' %}?{% else %}{{ next_year }}{% endif %}</h4>

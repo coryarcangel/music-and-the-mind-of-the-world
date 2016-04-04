@@ -351,7 +351,7 @@ GG Side 2:
 ",,
 109,TC_029,3,"Univerisity at Buffalo, New York. Weber",8mm Cassette,1977-09-30,1977-09-30 3,TC_029_01,20:42 - 40:48,20:05:,770930 2/3 Weber (s 1 fragment on s 2) / 771007,,,
 110,TC_029,4,"Univerisity at Buffalo, New York. Weber",8mm Cassette,1977-09-30,1977-09-30 4,TC_029_02,00:00 - 01:28,1:27:,770930 2/3 Weber (s 1 fragment on s 2) / 771007,,,
-111,TC_030,1,,8mm Cassette,1977-10-0#,1977-10-0# 1,TC_030_01,00:00 - 19:19,19:18:,77100# / 771026 1/2,"EK Side 1: 19:00 (start of 2nd performance, diff piano as well)
+111,TC_030,1,,8mm Cassette,"Unknown, October, 1977",1977-10-Unknown 1,TC_030_01,00:00 - 19:19,19:18:,77100# / 771026 1/2,"EK Side 1: 19:00 (start of 2nd performance, diff piano as well)
 EK Side 2:
 AM Side 1:
 AM Side 2:
@@ -360,7 +360,7 @@ CMA Side 2:
 GG Side 1:
 GG Side 2:
 ",,
-112,TC_030,2,,8mm Cassette,1977-10-0#,1977-10-0# 2,TC_030_01,19:22 - 30:01,10:39:,77100# / 771026 1/2,,,
+112,TC_030,2,,8mm Cassette,"Unknown, October, 1977",1977-10-Unknown 2,TC_030_01,19:22 - 30:01,10:39:,77100# / 771026 1/2,,,
 113,TC_030,1,,8mm Cassette,1977-10-26,1977-10-26 1,TC_030_02,04:00 - 30:04,26:03:,77100# / 771026 1/2,,,
 114,TC_031,1,Whiteman St.,8mm Cassette,1977-10-09,1977-10-09 1,TC_031_01,02:20 - 04:34,2:13:,771009 Whiteman St. / 771014 2 / SLL Outtakes,"EK Side 1: 04:34, 15:55, 18:19, 45:29
 EK Side 2: 34:10, 38:50, 42:10, 45:29, not sure what SSL outtakes are or where to note that?
@@ -825,7 +825,7 @@ CMA Side 2:
 GG Side 1: Russling at 10:27
 GG Side 2:
 ",,
-201,TC_064,1,,8mm Cassette,1978-01-##,1978-01-## 1,TC_064_01,00:00 - 10:27,10:26:,78010# 3 Days in First Part of Jan 78 / 780119,"EK Side 1: 10:30, tape label is weird with this
+201,TC_064,1,,8mm Cassette,"Unknown, January, 1978",1978-01-Unknown 1,TC_064_01,00:00 - 10:27,10:26:,78010# 3 Days in First Part of Jan 78 / 780119,"EK Side 1: 10:30, tape label is weird with this
 EK Side 2: n/a
 AM Side 1:
 AM Side 2:
@@ -834,7 +834,7 @@ CMA Side 2:
 GG Side 1:
 GG Side 2:
 ",,
-202,TC_064,2,,8mm Cassette,1978-01-##,1978-01-## 2,TC_064_01,10:27 - 21:32,11:05:,78010# 3 Days in First Part of Jan 78 / 780119,"EK Side 1: 10:30
+202,TC_064,2,,8mm Cassette,"Unknown, January, 1978",1978-01-Unknown 2,TC_064_01,10:27 - 21:32,11:05:,78010# 3 Days in First Part of Jan 78 / 780119,"EK Side 1: 10:30
 EK Side 2: n/a
 AM Side 1:
 AM Side 2:
@@ -843,7 +843,7 @@ CMA Side 2:
 GG Side 1:
 GG Side 2:
 ",,
-203,TC_064,3,,8mm Cassette,1978-01-##,1978-01-## 3,TC_064_01,21:34 - 28:12,6:38:,78010# 3 Days in First Part of Jan 78 / 780119,,,
+203,TC_064,3,,8mm Cassette,"Unknown, January, 1978",1978-01-Unknown 3,TC_064_01,21:34 - 28:12,6:38:,78010# 3 Days in First Part of Jan 78 / 780119,,,
 204,TC_065,1,,8mm Cassette,1978-01-20,1978-01-20 1,TC_065_01,00:00 - 30:53,30:52:,780120 / 780121 1/2,"EK Side 1: extreme low levels, almost silent
 EK Side 2: extreme low level, almost silent
 AM Side 1:
@@ -1232,8 +1232,8 @@ GG Side 2:
 ","Audio only on one channel, need to fix or make mono. ",
 270,TC_095,1,,8mm Cassette,1978-08-10,1978-08-10 1,TC_095_02,00:02 - 30:55,30:52:,780808 (Anne's tape recorder) / 780810,,,
 271,TC_095,1,"Anne Turyn's house. Newton, Massachusetts.",8mm Cassette,1978-08-08,1978-08-08 1,TC_095_01,00:06 - 30:48,30:42:,780808 (Anne's tape recorder) / 780810,,,
-272,TC_096,1,,8mm Cassette,1978-10-0#,1978-10-0# 1,TC_096_01,00:00 - 30:40,30:39:,7809## / 78100# ,,,
-273,TC_096,1,,8mm Cassette,1978-09-0#,1978-09-0# 1,TC_096_01,00:00 - 30:36,30:35:,7809## / 78100# ,"EK Side 1: what to do about ## in TC label?
+272,TC_096,1,,8mm Cassette,"Unknown, October, 1978",1978-10-Unknown 1,TC_096_01,00:00 - 30:40,30:39:,7809## / 78100# ,,,
+273,TC_096,1,,8mm Cassette,"Unknown, September 1978",1978-09-Unknown 1,TC_096_01,00:00 - 30:36,30:35:,7809## / 78100# ,"EK Side 1: what to do about ## in TC label?
 EK Side 2: what to do about ## in TC label?
 AM Side 1:
 AM Side 2:
@@ -2090,7 +2090,7 @@ CMA Side 2:
 GG Side 1:
 GG Side 2:
 ",,
-394,TC_150,1,,8mm Cassette,1979-07-##,1979-07-## 1,TC_150_01,00:00 - 30:23,30:22:,7907## 1/2 June or July (?). 1 & 2 (2/3 of side 2) ,"EK Side 1: n/a (one performance from what I can tell)
+394,TC_150,1,,8mm Cassette,"Unknown, July, 1979",1979-07-Unknown 1,TC_150_01,00:00 - 30:23,30:22:,7907## 1/2 June or July (?). 1 & 2 (2/3 of side 2) ,"EK Side 1: n/a (one performance from what I can tell)
 EK Side 2: this side only has 5 minutes of piano, not sure what TC notes refer to
 AM Side 1: X
 AM Side 2: X
@@ -2099,7 +2099,7 @@ CMA Side 2:
 GG Side 1:
 GG Side 2:
 ",,
-395,TC_150,2,,8mm Cassette,1979-07-##,1979-07-## 2,TC_150_02,00:00 - 07:52,7:52:,7907## 1/2 June or July (?). 1 & 2 (2/3 of side 2) ,"EK Side 1: n/a (one performance from what I can tell)
+395,TC_150,2,,8mm Cassette,"Unknown, July, 1979",1979-07-Unknown 2,TC_150_02,00:00 - 07:52,7:52:,7907## 1/2 June or July (?). 1 & 2 (2/3 of side 2) ,"EK Side 1: n/a (one performance from what I can tell)
 EK Side 2: this side only has 5 minutes of piano, not sure what TC notes refer to
 AM Side 1:
 AM Side 2:
@@ -2922,7 +2922,7 @@ GG Side 2:
 ",,
 536,TC_214,2,Broughel Fischer,8mm Cassette,1982-01-04,1982-01-04 2,TC_214_02,00:00 - 25:25,25:24:,820104 Broughel Fischer,,,
 537,TC_214,3,Broughel Fischer,8mm Cassette,1982-01-04,1982-01-04 3,TC_214_02,43:14 - 47:29,4:14:,820104 Broughel Fischer,,,
-538,TC_215,1,Rob Danielson's electic piano,8mm Cassette,1982-06-##,1982-06-## 1,TC_215_01,00:00 - 47:22,47:22:,8206## 1/2 Electric piano--Rob Danielson's,"EK Side 1: Left channel drops out 45:05 - 47:22
+538,TC_215,1,Rob Danielson's electic piano,8mm Cassette,"Unknown, June, 1982",1982-06-Unknown 1,TC_215_01,00:00 - 47:22,47:22:,8206## 1/2 Electric piano--Rob Danielson's,"EK Side 1: Left channel drops out 45:05 - 47:22
 EK Side 2:
 AM Side 1:
 AM Side 2:
@@ -2931,7 +2931,7 @@ CMA Side 2:
 GG Side 1:
 GG Side 2:
 ",Left channel drops out 45:05 - 47:22,
-539,TC_215,2,Rob Danielson's electic piano,8mm Cassette,1982-06-##,1982-06-## 2,TC_215_02,00:00 - 47:22,47:22:,8206## 1/2 Electric piano--Rob Danielson's,"EK Side 1: mono
+539,TC_215,2,Rob Danielson's electic piano,8mm Cassette,"Unknown, June, 1982",1982-06-Unknown 2,TC_215_02,00:00 - 47:22,47:22:,8206## 1/2 Electric piano--Rob Danielson's,"EK Side 1: mono
 EK Side 2:
 AM Side 1:
 AM Side 2:
