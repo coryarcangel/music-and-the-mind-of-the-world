@@ -456,3 +456,20 @@ and (max-device-width : 1024px)  {
   font-family: $font-family-headings;
 
 }
+
+#logos {
+  display: flex;
+  align-items: center;
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 30px;
+
+    &:hover {
+      path {
+        fill: black;
+      }
+    }
+  }
+}

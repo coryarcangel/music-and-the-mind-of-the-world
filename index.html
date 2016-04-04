@@ -43,8 +43,9 @@ layout: default
         <p class="small now-playing">Now Playing</p>
         <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down" download>{% include download.svg %}</a>
         <h4 class="card-title">{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}</h4>
-
+        {% if recording.MATMOTW_PART != '' %}
         <p class="card-text card-subtitle">Part {{ recording.MATMOTW_PART }}</p>
+        {% endif %}
         <p class="card-text card-notes">{{ recording.NOTES }}</p>
 
 
@@ -93,11 +94,11 @@ layout: default
 
               {% for logo in site.logos %}
               <a href="{{ logo.logoUrl }}" target="_blank">
-                <img src="{{ logo.image_path }}" alt="{{ logo.title }}">
+                {{ logo.svg }}
               </a>
               {% endfor %}
             </div>
-
+{{ site.pages[1].content }}
         </div>
       </div>
     </div>
