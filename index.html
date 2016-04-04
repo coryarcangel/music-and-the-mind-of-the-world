@@ -70,7 +70,7 @@ layout: default
     {% if this_year != next_year and forloop.last == false and next_year != 'X' %}
     <div class="card card-year" id="year-{{ next_year }}">
       <div class="card-block">
-        <h4 class="card-title">{{ next_year }}</h4>
+        <h4 class="card-title">{% if next_year == 'Unkn' %}?{% else %}{{ next_year }}{% endif %}</h4>
       </div>
     </div>
     {% endif %}

@@ -299,12 +299,21 @@ and (max-device-width : 1024px)  {
   }
 }
 
-#mobile-audio-controls {
+#footer-audio-controls {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 99999;
+
+  .audio-controls {
+    transform: translateY(50px);
+    transition: transform 0.5s;
+
+    &.visible {
+    transform: translateY(0);
+    }
+  }
 
   .audio-button-wrapper {
     display: flex;

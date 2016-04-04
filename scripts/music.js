@@ -30,7 +30,6 @@ var app = new Vue({
   methods: {
     playSong: function(id) {
       app.paused = 'false';
-      console.log(id);
       if (app.audio) {
         app.audio.pause();
       }
@@ -53,9 +52,6 @@ var app = new Vue({
         app.trackUrl = currentTrack.dataset.url;
       }
 
-
-
-
       app.audio.onplaying = function() {
         app.totalTime = createTime(this.duration);
       };
@@ -71,9 +67,10 @@ var app = new Vue({
         }
       };
 
-
       app.audio.play();
-
+      if (! $('#footer-audio-controls .audio-controls').hasClass('visible')) {
+        $('#footer-audio-controls .audio-controls').addClass('visible');
+      }
     },
 
     updatePlayhead:function(event) {
