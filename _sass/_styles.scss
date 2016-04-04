@@ -440,7 +440,7 @@ and (max-device-width : 1024px)  {
   }
 }
 
-#about-text-wrapper {
+#about-wrapper {
   padding-left: 15px;
   padding-bottom: 100px;
 
@@ -450,26 +450,41 @@ and (max-device-width : 1024px)  {
     font-family: $font-family-headings;
     margin-top: 50px;
   }
+
+  #logos {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      margin-right: 30px;
+
+      &:hover {
+        path {
+          fill: black;
+        }
+      }
+    }
+  }
+
+  #credits-wrapper {
+    h6 {
+      font-family: $font-family-brand;
+      font-size: 18px;
+      font-weight: 400;
+      color: rgba(82, 109, 132, 0.5);
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .page-title {
   font-family: $font-family-headings;
 
-}
-
-#logos {
-  display: flex;
-  align-items: center;
-
-  a {
-    display: inline-block;
-    text-decoration: none;
-    margin-right: 30px;
-
-    &:hover {
-      path {
-        fill: black;
-      }
-    }
-  }
 }

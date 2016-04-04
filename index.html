@@ -84,21 +84,24 @@ layout: default
   <section id="about">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-4">
-        <div id="about-text-wrapper">
+        <div id="about-wrapper">
 
 
             <h2 class="page-title">{{ site.pages[0].title }}</h2>
             {{ site.pages[0].content }}
 
+            <h2 class="page-title">{{ site.pages[1].title }}</h2>
             <div id="logos">
-
               {% for logo in site.logos %}
               <a href="{{ logo.logoUrl }}" target="_blank">
                 {{ logo.svg }}
               </a>
               {% endfor %}
             </div>
-{{ site.pages[1].content }}
+
+            <div id="credits-wrapper">
+              {{ site.pages[1].content }}
+            </div>
         </div>
       </div>
     </div>
