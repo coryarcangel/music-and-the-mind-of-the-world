@@ -39,24 +39,3 @@ At the end of January 1977 a dilly of a blizzard slammed Buffalo, just as Anne T
 Along the way, there were certain figures that I picked up and carried forward. There was, for example, “On Top of Old Smokey,” a folk tune that had struck me very much as a young person. Also, there appeared a kind of theme that persisted over the course of the coming years, a figure that alternated a chord in E flat with a G minor chord. Just a week before the end of the first year, on December 18, I gave the first public performance of my piano work. My trusting friend, Rhys Chatham, had invited me to participate at The Kitchen in the first New Music America Festival, New Music New York. The fact that I was almost completely unprepared was not an issue for me, nor was it an obstacle that I was completely insecure about what I was going to do. These aspects, I felt, were a central concern of the project, and should be foregrounded rather than veiled. The flip side of this, too, was implicated: the fact that I allowed myself undue confidence and self-assurance, especially in certain moments of the presentation. Everything at the level of the performance activity itself was to be legitimized; but for this to happen, it was essential that there be a range of material incorporated, from the familiar to the arbitrary, from the proficient to the diffident, from the novel to the trite, and from the decisive to the tentative. By so scattering the source material, I wanted to animate a level of confusion or consternation in the presence of which the listeners would be required to either slip off into a trance or to remove themselves to a critical distance at which they would receive this polymodal material as the product of a careful design, a gesture of reassigned musical values: a hypostatization of critical level in the direction of what was soon to be thought of as the “postmodern.” 
 
 But music flows through time, and it's difficult to achieve critical distance in the course of live performance. I was expecting a lot, so I shouldn't have been surprised when I didn't get very much in the way of critical approbation. The scant response that my performance solicited was negative. The lack of response that predominated spoke to me even more clearly; I was on my own it seemed. So I began in 1978 full of confidence, but isolated in my practice.
-
-### Credits
-
-Music and the Mind of the World by Tony Conrad has been published by Arcangel Surfware. 
-
-###### Editing, copy-editing & transcription
-Cory Arcangel, Gil Gentile, Elliot Kaufman, Amanda Schmidt
-
-###### Archival programming & data manipulation
-Henry Van Dusen 
-
-###### Archival audio services
-George Blood, L.P.
-
-###### Mastering
-Spleenless Mastering
-
-###### Web programming & design
-Familiar Studio 
-
-© Tony Conrad
