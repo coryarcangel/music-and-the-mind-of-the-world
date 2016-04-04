@@ -44,14 +44,19 @@ But music flows through time, and it's difficult to achieve critical distance in
 
 Music and the Mind of the World by Tony Conrad has been published by Arcangel Surfware. 
 
-Editing, copy-editing & transcription: Cory Arcangel, Gil Gentile, Elliot Kaufman, Amanda Schmidt
+###### Editing, copy-editing & transcription
+Cory Arcangel, Gil Gentile, Elliot Kaufman, Amanda Schmidt
 
-Archival programming & data manipulation: Henry Van Dusen 
+###### Archival programming & data manipulation
+Henry Van Dusen 
 
-Archival audio services: George Blood, L.P.
+###### Archival audio services
+George Blood, L.P.
 
-Mastering: Spleenless Mastering
+###### Mastering
+Spleenless Mastering
 
-Web programming & design: Familiar Studio 
+###### Web programming & design
+Familiar Studio 
 
 © Tony Conrad
