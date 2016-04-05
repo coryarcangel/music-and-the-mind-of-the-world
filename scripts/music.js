@@ -34,6 +34,8 @@ var app = new Vue({
         app.audio.pause();
       }
 
+      $('#title-inner-wrapper').velocity("stop");
+      
       currentTrack = document.getElementById('card-' + id);
 
       var w = window.innerWidth;
@@ -72,9 +74,24 @@ var app = new Vue({
         $('#footer-audio-controls .audio-controls').addClass('visible');
       }
 
-      // $('#title-inner-wrapper')
-      // .velocity({ left: '75px' }, { loop: true })
-      // .velocity({ left: '-75px' }, { loop: true });
+      setTimeout(function(){
+
+        var outerWrapperWidth = $('#title-outer-wrapper').width();
+        var innerWrapperWidth = $('#title-inner-wrapper .title').width();
+        if (innerWrapperWidth > outerWrapperWidth ){
+
+          $('#title-inner-wrapper').addClass('overflow');
+
+          var leftDistance = '-' + (innerWrapperWidth - outerWrapperWidth) + 'px';
+
+          $('#title-inner-wrapper')
+          .velocity({ left: '0px' }, { duration: 3000, loop: true, delay: 3000  })
+          .velocity({ left: leftDistance }, { duration: 3000, loop: true, delay: 3000 });
+        } else {
+          $('#title-inner-wrapper').removeClass('overflow');
+        }
+      }, 200);
+
     },
 
     updatePlayhead:function(event) {

@@ -213,7 +213,7 @@ and (max-device-width : 1024px)  {
 }
 
 .audio-controls {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
 
@@ -306,48 +306,6 @@ and (max-device-width : 1024px)  {
   right: 0;
   z-index: 99999;
 
-  .audio-button-wrapper {
-    display: flex;
-    justify-content: center;
-
-    .button-wrapper-inner {
-
-      position: relative;
-
-      @include media-breakpoint-down(xs) {
-        width: 100%;
-      }
-
-      @include media-breakpoint-up(sm) {
-        min-width: 335px;
-      }
-
-      .title {
-        margin-right: 10px;
-
-        @include media-breakpoint-down(xs) {
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-
-      .part {
-
-        &.hidden {
-          display: none;
-        }
-      }
-      .next {
-        float: right;
-      }
-
-      .download {
-        float: right;
-      }
-    }
-  }
-
   .audio-controls {
     background-color: rgba(#f7f6f2, 0.9);
     height: 50px;
@@ -358,57 +316,69 @@ and (max-device-width : 1024px)  {
     transform: translateY(0);
     }
 
-    .btn-audio {
-      margin-top: -5px;
-    }
+    .audio-button-wrapper {
+      display: flex;
+      justify-content: center;
 
-    .play, .pause {
-      position: static;
-    }
+      .button-wrapper-inner {
+        position: relative;
 
-    .pause {
-      path {
-        stroke: $brand-primary;
-        opacity: 1;
-      }
-    }
+        @include media-breakpoint-down(xs) {
+          width: 100%;
+        }
 
-    .play {
-      path {
-        fill-opacity: 1;
-      }
-    }
+        @include media-breakpoint-up(sm) {
+          min-width: 335px;
+        }
 
-    .next {
-      // position: absolute;
-      // right: 0;
-    }
+        .part {
+          &.hidden {
+            display: none;
+          }
+        }
 
-    .previous, .next {
-      &.inactive {
-        pointer-events: none;
+        .next {
 
-        path {
-          opacity: 0.5;
+          // position: absolute;
+          // right: 10px;
+          float: right;
+        }
+
+        .download {
+          float: right;
+        }
+
+        .btn-audio {
+          margin-top: -5px;
+        }
+
+        .play, .pause {
+          position: static;
+        }
+
+        .pause {
+          path {
+            stroke: $brand-primary;
+            opacity: 1;
+          }
+        }
+
+        .play {
+          path {
+            fill-opacity: 1;
+          }
+        }
+
+        .previous, .next {
+          &.inactive {
+            pointer-events: none;
+
+            path {
+              opacity: 0.5;
+            }
+          }
         }
       }
-    }
-
-    .title {
-      font-family: $font-family-headings;
-      font-size: 0.938rem;
-      text-decoration: underline;
-      // position: absolute;
-      top: 4px;
-      // left: 50%;
-      // transform: translateX(-50%);
-      text-align: center;
-
-      // media query for iphone 5s and older
-      @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
-          font-size: 0.7rem;
-          margin-top: 7px;
-        }
     }
 
     .progress-bar {
@@ -454,26 +424,43 @@ and (max-device-width : 1024px)  {
   }
 
   #title-outer-wrapper {
-    width: 175px;
+    width: 60%;
+
+    @include media-breakpoint-up(sm) {
+      width: 175px;
+    }
+
     height: 22px;
     overflow: hidden;
     display: inline-block;
     position: relative;
 
     #title-inner-wrapper {
-      // display: block;
-      position: absolute;
+      // position: absolute;
       white-space: nowrap;
-      // animation: rightThenLeft 4s infinite;
+      text-align: center;
+
+      &.overflow {
+        position: absolute;
+        text-align: left;
+      }
+
+      .title {
+        font-family: $font-family-headings;
+        font-size: 0.938rem;
+        text-decoration: underline;
+        top: 4px;
+        text-align: center;
+
+        // media query for iphone 5s and older
+        @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+          font-size: 0.7rem;
+          margin-top: 7px;
+        }
+      }
     }
   }
 }
-
-// @keyframes rightThenLeft {
-//     0%   {left:0;}
-//     50%  {left:-100%;}
-//     100% {left:0;}
-// }
 
 #about-wrapper {
   padding-left: 15px;
