@@ -3,7 +3,7 @@ title: CREDITS
 date: 2016-04-04 11:31:00 -04:00
 ---
 
-![Arcangel Surfware](/images/arcangel.svg)
+[![Arcangel Surfware](/images/arcangel.svg)](http://www.arcangelsurfware.biz/)
 ![George Blood, L.P.](/images/george-blood.svg)
 ![Familiar Studio](/images/familiar.svg)
 
