@@ -3,12 +3,6 @@ title: CREDITS
 date: 2016-04-04 11:31:00 -04:00
 ---
 
-[![Arcangel Surfware](/images/arcangel.svg)](http://www.arcangelsurfware.biz/)
-
-[![George Blood, L.P.](/images/george-blood.svg)](http://www.georgeblood.com/)
-
-[![Familiar Studio](/images/familiar.svg)](https://familiar-studio.com/)
-
 Music and the Mind of the World by Tony Conrad has been published by Arcangel Surfware.
 
 ###### Editing, copy-editing & transcription
