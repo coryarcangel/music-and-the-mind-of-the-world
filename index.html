@@ -1,5 +1,6 @@
 ---
 layout: default
+youtube:
 ---
 
 <div class="home">
@@ -38,7 +39,7 @@ layout: default
 
     <div class="card card-recording" v-bind:class="{ 'active': activeSong == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
     data-title="{{ recording.NOTES }}"
-    data-date="{% if dateSplit[0] == 'Unknown' %}{{ recording.DATE }}{% else %}{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %}–{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}{% endif %}"
+    data-date="{% if dateSplit[0] == 'Unknown' %}{{ recording.DATE }}{% else %}{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %} & {{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}{% endif %}"
     data-part="{{ recording.MATMOTW_PART }}"
     data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
     >
@@ -58,10 +59,7 @@ layout: default
           {% if dateSplit[0] == 'Unknown' %}
             {{ recording.DATE }}
           {% else %}
-            {{ dateSplit[0] | date: "%A, %B %-d, %Y" }}
-            {% if dateSplit[1] %}
-              –{{ dateSplit[1] | date: "%A, %B %-d, %Y" }}
-            {% endif %}
+            {{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %} & {{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}
           {% endif %}
         </h4>
         {% if recording.MATMOTW_PART >= '1' %}
