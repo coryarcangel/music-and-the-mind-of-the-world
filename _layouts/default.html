@@ -22,6 +22,7 @@
 
     <meta property="og:site_name" content="{{ site.title }}"/>
     <meta property="og:type" content="website"/>
+    <meta property="fb:app_id" content="1009475232467282"/>
 
     <!-- twitter cards -->
     <meta name="twitter:card" content="summary" />
@@ -38,24 +39,6 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
   </head>
   <body>
-
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '1009475232467282',
-        xfbml      : true,
-        version    : 'v2.5'
-      });
-    };
-
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "//connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
 
     <div id="app">
       <header id="header">
