@@ -4,7 +4,7 @@ date: 2016-04-04 11:31:00 -04:00
 ---
 
 ![Arcangel Surfware](/images/arcangel.svg)
-Music and the Mind of the World by Tony Conrad has been published by Arcangel Surfware. 
+Music and the Mind of the World by Tony Conrad has been published by Arcangel Surfware.test 
 
 ###### Editing, copy-editing & transcription
 Cory Arcangel, Gil Gentile, Elliot Kaufman, Amanda Schmidt
