@@ -26,7 +26,7 @@
     <!-- twitter cards -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{{ site.title }}" />
-    <meta name="twitter:description" content="{{ description is defined ? description|striptags[:160] : seo.description|e }}" />
+    <meta name="twitter:description" content="{{site.description | truncate: 140}}" />
 
     <meta name="twitter:image" content="{{ site.url }}{{ site.image }}" />
 
