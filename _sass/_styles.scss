@@ -45,9 +45,10 @@ and (max-device-width : 1024px)  {
   }
 
   .navbar-brand {
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
-    line-height: 1;
+    line-height: 18px;
+    padding-top: .5rem;
 
     .title {
       color: white;
