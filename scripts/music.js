@@ -35,7 +35,7 @@ var app = new Vue({
       }
 
       $('#title-inner-wrapper').velocity("stop");
-      
+
       currentTrack = document.getElementById('card-' + id);
 
       var w = window.innerWidth;

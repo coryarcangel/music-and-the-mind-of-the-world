@@ -44,10 +44,10 @@ youtube:
     data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
     >
 
-      <button class="btn-audio play" v-show="activeSong != '{{ forloop.index }}' || paused == 'true'" v-on:mousedown="playSong({{ forloop.index }})">
+      <button class="btn-audio play" v-show="activeSong != '{{ forloop.index }}' || paused == 'true'" v-on:click="playSong({{ forloop.index }})">
         {% include play.svg %}
       </button>
-      <button class="btn-audio pause" v-show="activeSong == '{{ forloop.index }}' && paused == 'false'" v-on:mousedown="pauseSong()">
+      <button class="btn-audio pause" v-show="activeSong == '{{ forloop.index }}' && paused == 'false'" v-on:click="pauseSong()">
         {% include pause.svg %}
       </button>
 
