@@ -181,13 +181,6 @@
         svg {
           transform: translateY(-20%);
           margin: 0 auto;
-          display: none;
-        }
-
-        &:hover {
-          svg {
-            display: block;
-          }
         }
       }
 
@@ -253,11 +246,25 @@
         and (max-width : 1024px)  {
           font-size: 6rem;
         }
+      }
+    }
+  }
+}
 
-        // @include media-breakpoint-up(sm) {
-        //   // margin-bottom: 0.75rem;
-        //   margin-bottom: 0;
-        // }
+.no-touchevents {
+  .card-recording {
+
+    .play, .pause {
+
+      svg {
+
+        display: none;
+      }
+
+      &:hover {
+        svg {
+          display: block;
+        }
       }
     }
   }
