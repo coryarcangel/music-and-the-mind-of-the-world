@@ -20,4 +20,4 @@ Spleenless Mastering
 ###### Web programming & design
 Familiar Studio 
 
-© Tony Conrad
+© Tony Conrad Estate
