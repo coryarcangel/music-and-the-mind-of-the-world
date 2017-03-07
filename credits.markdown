@@ -15,9 +15,12 @@ Henry Van Dusen
 George Blood, L.P.
 
 ###### Mastering
-Spleenless Mastering
+Jon Cohrs at Spleenless Mastering
 
 ###### Web programming & design
 Familiar Studio 
+
+###### Special thanks for their support 
+Greene Naftali Gallery and Galerie Buchholz
 
 © Tony Conrad Estate
