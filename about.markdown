@@ -49,5 +49,5 @@ Tony would use two titles – Music and the Mind of the World  and Music and the
 
 
 ## Change log
-03-07-2017: Beta site up.
+03-07-2017: Beta site up.   
 03-13-2017: Thanks to everyone for their enthusiasm! We are in public-beta and will be working out kinks - if we find any - over the next few weeks. 
