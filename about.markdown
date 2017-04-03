@@ -50,3 +50,7 @@ Tony would use two titles – Music and the Mind of the World  and Music and the
 
 ## Change log
 03-07-2017: Beta site up.   
+04-03-2017: Henry Street location fixed. Launch!  
+
+## Contact   
+info AT arcangelsurfware DOT biz 
