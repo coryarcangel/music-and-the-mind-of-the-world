@@ -3,7 +3,7 @@ title: ABOUT THE WORK
 date: 2016-03-14 20:38:00 -04:00
 ---
 
-From 1976 to 1982, Tony Conrad (1940-2016) created “Music and the Mind of the World,” a piano composition comprising over 200 hours of recorded music. During this time everything Conrad played on the piano was recorded (with the incidental exception of perhaps three or four hours). In this endeavor – which includes the sounds of practicing, banging on the keys, formal exercises, experiments with the harmonic sonority of the piano itself, and even “On Top of Old Smokey” – we witness what might in essence be described as the total encounter between an improvising performer and the central instrument of Western musical culture. Now, for the first time, this influential yet largely unknown work has been published and is now available online for free at the domain musicandthemindofthe.world.
+From 1976 to 1982, Tony Conrad (1940-2016) created “Music and the Mind of the World,” a piano composition comprising over 200 hours of recorded music. During this time everything Conrad played on the piano was recorded (with the incidental exception of perhaps three or four hours). In this endeavor – which includes the sounds of practicing, banging on the keys, formal exercises, experiments with the harmonic sonority of the piano itself, and even “On Top of Old Smokey” – we witness what might in essence be described as the total encounter between an improvising performer and the central instrument of Western musical culture. Now, for the first time, this influential yet largely unknown work has been published by [Arcangel Surfware](http://www.arcangelsurfware.biz) and is now available online for free at the domain musicandthemindofthe.world.
 
 
 ## Me and My Piano: Music and the Mind of the World
@@ -50,7 +50,7 @@ Tony would use two titles – Music and the Mind of the World  and Music and the
 
 ## Change log
 03-07-2017: Beta site up.   
-04-03-2017: Henry Street location fixed. Location added to matmotw_619. Youtube vids listed. Launch!  
+04-03-2017: Locations corrected matmotw_477-485. Location added matmotw_619. Youtube vids listed. Launch!  
 
 ## Contact   
-info AT arcangelsurfware DOT biz 
+info AT [arcangelsurfware](http://www.arcangelsurfware.biz) DOT biz 
