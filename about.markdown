@@ -50,7 +50,7 @@ Tony would use two titles – Music and the Mind of the World  and Music and the
 
 ## Change log
 
-12-18-2021: Corrected typo, "222 8mm inch cassette tapes" to "222 1/8th inch cassette tapes". 
+12-18-2021: Corrected typo, "222 8mm inch cassette tapes" to "222 1/8th inch cassette tapes". Commented out Twitter bot (while I try to get it up again) 
 03-07-2017: Beta site up.   
 04-03-2017: Locations corrected matmotw_477-485. Location added matmotw_619. Youtube vids listed. Launch!  
 09-27-2017: Twitter bot [launched](https://twitter.com/on_this_day_mmw).
