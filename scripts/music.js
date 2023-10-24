@@ -30,14 +30,12 @@ var app = new Vue({
     numberOfTracks: numberOfTracks,
     trackUrl: localStorage.getItem('trackUrl') ? localStorage.getItem('trackUrl') :'',
     paused: 'true',
-    playhead: "",
     elapsed: "",
     transformElapsed: "0",
     fullscreenClicked: 'false'
   },
   methods: {
     playSong: function(id) {
-      console.log("playing",id)
       app.paused = 'false';
       if (app.audio) {
         app.audio.pause();
@@ -46,7 +44,6 @@ var app = new Vue({
       $('#title-inner-wrapper').velocity("stop");
 
       currentTrack = document.getElementById('card-' + id);
-      app.playhead = document.querySelector("#fullscreen .brand-small");
       app.elapsed = document.querySelector("#fullscreen .time-elapsed");
       //restart if we get to the end!
       if(!currentTrack) {
@@ -66,7 +63,6 @@ var app = new Vue({
       if (app.activeSong != id || !!!app.audio) {
         // this restarts the song
         app.activeSong = id;
-        console.log("restarging",id)
         localStorage.setItem('activeSong', app.activeSong);
         app.audio = new Audio(currentTrack.dataset.url);
         app.currentTime = '';
@@ -84,7 +80,7 @@ var app = new Vue({
         localStorage.setItem('currentTime', app.currentTime);
         app.elapsedPercentage = ((this.currentTime / this.duration) * 100).toFixed(2);
         localStorage.setItem('elapsedPercentage', app.elapsedPercentage);
-        if(this.currentTime % 60 < 1){
+        if(this.currentTime % 60 < 1 && app.elapsed){
           let w = Math.floor(app.elapsed.getBoundingClientRect().width);
           let space = Math.floor(window.innerWidth*.005);
           app.transformElapsed = -1*(w+space)+"px"
@@ -121,16 +117,16 @@ var app = new Vue({
         }
       }, 200);
       // document.getElementById("fullscreen").innerHTML = currentTrack.innerHTML;
-      this.updateFullscreenPanel();
-      if (app.fullscreenClicked == 'false') {
-        document.getElementById("fullscreen").requestFullscreen();
+      if($(".kiosk").length){
+        this.updateFullscreenPanel();
+        if (app.fullscreenClicked == 'false') {
+          document.getElementById("fullscreen").requestFullscreen();
+        }
+        fullscreenClicked = 'true';
       }
-      fullscreenClicked = 'true';
     },
     updateFullscreenPanel(){
       //get current card
-      console.log("updating fullscreen panel");
-      console.log(this,this.activeSong)
       var currentTrack = document.getElementById('card-' + this.activeSong);
       $("#fullscreen .card-kiosk .small-part").html("MATMOTW_"+urlToId(app.trackUrl));
       $("#fullscreen .card-kiosk .card-title").html(app.date);
@@ -138,10 +134,8 @@ var app = new Vue({
       $("#fullscreen .card-kiosk").attr("data-song", this.activeSong);
       $("#fullscreen .card-kiosk").addClass("song-is-playing");
       // $("#fullscreen .card-body").html(currentTrack.innerHTML);
-      console.log(currentTrack);
       if(currentTrack)
       $("#fullscreen .card .card-notes").html(currentTrack.dataset.title);
-      // console.log(currentTrack.dataset);
 
     },
     updatePlayhead:function(event) {
@@ -157,7 +151,6 @@ var app = new Vue({
       var newTime  = app.audio.duration * (percent/100);
       app.audio.currentTime = newTime.toFixed(0);
       
-      console.log("YAH?",app.transformElapsed)
     },
     mouseDown:function(event) {
       if (app.activeSong) {
@@ -184,7 +177,6 @@ var app = new Vue({
       // app.date = '';
     },
     nextSong: function() {
-      console.log(app.activeSong + ' ' + numberOfTracks);
       if (app.activeSong < numberOfTracks) {
         app.playSong(parseInt(app.activeSong) + 1)
       }
@@ -210,14 +202,12 @@ $(document).ready(function(){
     e.preventDefault();
     var offset = window.innerWidth <= 768 ? -10 : -50;
     var year = $(this).attr("href");
-    console.log(year);
     $(year).velocity("scroll",  { duration: 1000, offset : offset })
   });
 
   $(document).on("click","#fullscreen .card.song-is-playing", function(e){
     e.preventDefault();
     e.stopPropagation();
-    console.log($(e.target).closest(".card").attr("data-song"));
     app.playSong($(e.target).closest(".card").attr("data-song"));
   });
 
@@ -234,7 +224,6 @@ $(document).ready(function(){
     // app.playSong(parseInt($("#fullscreen .card").attr("data-song")));
     app.audio.play();
     app.paused = 'false';
-    console.log("app audio",app.audio)
   });
 
   $(document).on("click","#fullscreen-pause", function(e){

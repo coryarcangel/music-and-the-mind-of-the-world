@@ -4,7 +4,7 @@ youtube: https://www.youtube.com/channel/UCPjrcaZeU9rMGAbmfYWeeLw
 <!-- twitter: https://twitter.com/on_this_day_mmw -->
 ---
 {% assign recordings = site.data.master | sort: 'DATE_WITH_PART' %}
-<div class="home">
+<div class="home kiosk">
   {% for recording in recordings %}
     {% if activeSong == forloop.index %}
     {% assign activeRecording = recording %}
