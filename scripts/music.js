@@ -130,6 +130,7 @@ var app = new Vue({
       var currentTrack = document.getElementById('card-' + this.activeSong);
       $("#fullscreen .card-kiosk .small-part").html("MATMOTW_"+urlToId(app.trackUrl));
       $("#fullscreen .card-kiosk .card-title").html(app.date);
+      $("#fullscreen .card-kiosk .now-playing").html("CONTINUE:");
       $("#fullscreen .card-kiosk .card-subtitle").html(app.part ? "Part "+app.part : "");
       $("#fullscreen .card-kiosk").attr("data-song", this.activeSong);
       $("#fullscreen .card-kiosk").addClass("song-is-playing");
