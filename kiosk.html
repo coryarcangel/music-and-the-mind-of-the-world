@@ -1,0 +1,201 @@
+---
+layout: default
+youtube: https://www.youtube.com/channel/UCPjrcaZeU9rMGAbmfYWeeLw
+<!-- twitter: https://twitter.com/on_this_day_mmw -->
+---
+{% assign recordings = site.data.master | sort: 'DATE_WITH_PART' %}
+<div class="home">
+  {% for recording in recordings %}
+    {% if activeSong == forloop.index %}
+    {% assign activeRecording = recording %}
+    {% endif %}
+    
+  {% endfor %}
+
+  <section id="fullscreen" >
+    <div class="card-year card" id="year-{{ this_year }}" data-number-of-tracks="{{ forloop.length }}">
+      <div class="card-block">
+        <h4 class="card-title">START</h4>
+      </div>
+    </div>
+      <!-- <div class="now-playing" style="display: none;" v-bind:class="{ 'song-selected': activeSong != '' }">
+        <div class="chosen">
+          <h3>Continue<br> playing: </h3>
+        </div>
+        <div class="not-chosen">
+          <a><h4 class="">Start from the beginning</h4></a>
+          <h4> or click a track to play</h4>
+        </div>
+      </div> -->
+
+      <div class="card card-recording card-kiosk active" id="card-{{ activeSong }}"
+        data-title="{{ activeRecording.NOTES }}"
+        data-date="{% if dateSplit[0] == 'Unknown' %}{{ activeRecording.DATE }}{% else %}{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %} & {{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}{% endif %}"
+        data-part="{{ activeRecording.MATMOTW_PART }}"
+        data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ activeRecording.MATMOTW }}.mp3"
+        >
+        <button class="btn-audio play" >
+          {% include play.svg %}
+        </button>
+          <div class="card-block">
+            <p class="small small-part"></p>
+            <p class="small now-playing">CONTINUE:</p>
+            <h4 class="card-title">
+              Start playing Music and the Mind of the World
+            </h4>
+            <p class="card-text card-subtitle"></p>
+            <p class="card-text card-notes"></p>
+
+          </div>
+
+          <div class="audio-controls">
+
+            <div class="brand-small time-total" v-show="activeSong != '{{ recording.MATMOTW }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
+            {% raw %}
+            <div class="progress-bar">
+              <div class="brand-small" style="left: min(max(3.6vw,{{ elapsedPercentage }}%),calc(100% - 3.6vw)); transform: translateX({{transformElapsed}})">
+                <span class="time-elapsed">{{ currentTime }}</span>
+                <span class="divider"></span>
+                <span class="time-total">{{ totalTime }}</span>
+              </div>
+              <progress class="progress progress-info" value="{{ elapsedPercentage }}" max="100"></progress>
+            </div>
+            {% endraw %}
+          </div>
+        </div>
+      
+    
+    <div id="fullscreen-controls">
+      <div id="fullscreen-play">
+        <button class="" v-show="paused == 'true'">
+          {% include play.svg %}
+        </button>
+      </div>
+      <div id="fullscreen-pause">
+        <button class="" v-show="paused == 'false'" v-on:click="pauseSong()">
+          {% include pause.svg %}
+        </button>
+      </div>
+      <h3 id="fullscreen-exit">Exit full screen</h3>
+    </div>
+  </section>
+  
+  <section id="recordings">
+
+  {% for recording in recordings %}
+
+    {% assign this_year = recording.DATE | slice: 0, 4  %}
+    {% assign next_year = recordings[forloop.index].DATE | slice: 0, 4 %}
+    {% assign totalTimeSplit = recording.TIMECODE_ELAPSED | split: ':' %}
+    {% assign dateSplit = recording.DATE | split: ', ' %}
+    {% assign nextYearString = recordings[forloop.index].DATE %}
+
+    {% if this_year != next_year and forloop.last == false and this_year != 'Unkn' and next_year != 'Unkn' and next_year != 'X' %}
+      {% assign needYearCard = 'true' %}
+    {% elsif this_year != next_year and forloop.last == false and nextYearString == 'Unknown' %}
+      {% assign needYearCard = 'true' %}
+    {% else %}
+      {% assign needYearCard = 'false' %}
+    {% endif %}
+
+    {% if forloop.first %}
+    <div class="card card-year" id="year-{{ this_year }}" data-number-of-tracks="{{ forloop.length }}">
+      <div class="card-block">
+        <h4 class="card-title">{{ this_year }}</h4>
+      </div>
+    </div>
+
+    {% endif %}
+
+
+    {% if dateSplit[0] != "X" %}
+
+    <div class="card card-recording" v-bind:class="{ 'active': activeSong == '{{ forloop.index }}' }" id="card-{{ forloop.index }}"
+    data-title="{{ recording.NOTES }}"
+    data-date="{% if dateSplit[0] == 'Unknown' %}{{ recording.DATE }}{% else %}{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %} & {{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}{% endif %}"
+    data-part="{{ recording.MATMOTW_PART }}"
+    data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
+    >
+
+      <button class="btn-audio play" v-show="activeSong != '{{ forloop.index }}' || paused == 'true'" v-on:click="playSong({{ forloop.index }})">
+        {% include play.svg %}
+      </button>
+      <button class="btn-audio pause" v-show="activeSong == '{{ forloop.index }}' && paused == 'false'" v-on:click="pauseSong()">
+        {% include pause.svg %}
+      </button>
+
+      <div class="card-block">
+        <p class="small small-part">MATMOTW_{{recording.MATMOTW}}</p>
+        <p class="small now-playing">Now Playing</p>
+        <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down" download>{% include download.svg %}</a>
+        <h4 class="card-title">
+          {% if dateSplit[0] == 'Unknown' %}
+            {{ recording.DATE }}
+          {% else %}
+            {{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %} & {{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}
+          {% endif %}
+        </h4>
+        {% if recording.MATMOTW_PART >= '1' %}
+        <p class="card-text card-subtitle">Part {{ recording.MATMOTW_PART }}</p>
+        {% endif %}
+        <p class="card-text card-notes">{{ recording.NOTES }}</p>
+
+      </div>
+
+      <div class="audio-controls">
+
+        <div class="brand-small time-total" v-show="activeSong != '{{ recording.MATMOTW }}'">{{ totalTimeSplit[0] }}:{{ totalTimeSplit[1] }}</div>
+        {% raw %}
+        <div class="progress-bar">
+          <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
+            <span class="time-elapsed">{{ currentTime }}</span>
+            <span class="divider"></span>
+            <span class="time-total">{{ totalTime }}</span>
+          </div>
+          <progress class="progress progress-info" value="{{ elapsedPercentage }}" max="100"></progress>
+        </div>
+        {% endraw %}
+      </div>
+    </div>
+
+    {% if needYearCard == 'true' %}
+    <div class="card card-year" id="year-{{ next_year }}">
+      <div class="card-block">
+        <h4 class="card-title">{% if next_year == 'Unkn' %}?{% else %}{{ next_year }}{% endif %}</h4>
+      </div>
+    </div>
+    {% endif %}
+
+    {% endif %}
+
+  {% endfor %}
+
+  </section>
+
+  <section id="about">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-4">
+        <div id="about-wrapper">
+
+
+            <h2 class="page-title">{{ site.pages[0].title }}</h2>
+            {{ site.pages[0].content }}
+
+            <h2 class="page-title">{{ site.pages[1].title }}</h2>
+            <div id="logos">
+              {% for logo in site.logos %}
+              <a href="{{ logo.logoUrl }}" target="_blank">
+                <img src="{{ logo.svg }}">
+              </a>
+              {% endfor %}
+            </div>
+
+            <div id="credits-wrapper">
+              {{ site.pages[1].content }}
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</div>

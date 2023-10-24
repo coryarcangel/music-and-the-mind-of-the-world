@@ -1,4 +1,39 @@
-#recordings {
+#fullscreen {
+  align-items: center;
+  #fullscreen-controls {
+    display: none;
+    position: absolute;
+    top: .25em;
+    right: 1em;
+  }
+  .now-playing {
+    width: 15.625rem;
+    height: 16.313rem;
+    margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.now-playing {
+  .chosen {
+    display: none;
+    color: #526d84;
+    font-size: 32px;
+  }
+  &.song-selected {
+    .not-chosen {
+      display: none;
+    }
+    .chosen {
+      display: block;
+    }
+  }
+}
+
+#recordings, #fullscreen {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -154,7 +189,7 @@
 
           .brand-small {
             position: absolute;
-            bottom: 3px;
+            // bottom: 3px;
             margin-left: -26px;
           }
 
@@ -272,4 +307,132 @@
 
 .card .brand-small, .card .card-title{
   color: $brand-primary;
+}
+
+body #fullscreen:fullscreen {
+  cursor: none;
+  background: white;
+  .card-year {
+    display: none;
+  }
+  .now-playing {
+    display: none;
+  }
+  #fullscreen-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    #fullscreen-play, #fullscreen-pause {
+      button {
+        width: 6rem;
+        height: 6rem;
+        background-color: transparent;
+        border: none;
+        svg {
+          width: 100%;
+          height: 100%;
+          path {
+            fill: white;
+          }
+        }
+      }
+    }
+    #fullscreen-exit {
+      color: white;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &.controls-visible {
+    cursor: default;
+    #fullscreen-controls {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+  .card {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    .card-block {
+      width: 100%;
+      flex: 1;
+      padding: 32px;
+      .small-part {
+        font-size: 60px;
+        letter-spacing: 6px;
+        //vw
+        font-size: 2.5vw;
+        letter-spacing: .25vw;
+        //new
+        font-size: 1.5vw;
+      }
+      .now-playing {
+        display: none;
+        //vw
+
+      }
+      .card-title {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+        font-size: 264px;
+        //vw
+        font-size: 9vw;
+
+      }
+      .card-subtitle {
+        font-size: 86px;
+        line-height: 1;
+        //vw
+        
+
+      }
+      .cart-notes {
+        font-size: 16px;
+        line-height: 20px;
+        //vw
+
+      }
+      .card-text {
+        font-size: 60px;
+        /* line-height: 20px; */
+        line-height: 1;
+        padding-top: 60px;
+        position: static;
+        //vw
+        font-size: 1.5vw;
+        padding-top: 1.5em;
+        //new 
+        font-size: 3vw;
+        padding-top: 1.2em;
+      }
+    }
+    .audio-controls {
+      .brand-small {
+        font-size: 2.625rem;
+        // bottom: 34px!important;
+        // transform: translateX(-50%);
+        margin-left: 0vw!important;
+        //vw
+        font-size: 1.5vw;
+        bottom: .8vw!important;
+        min-width: 8.5vw;
+      }
+      .progress-info {
+        height: 34px;
+        //vw 
+        height: 1vw;
+      }
+    }
+  }
+  .download, .btn-audio.play {
+    display: none!important;
+  }
 }

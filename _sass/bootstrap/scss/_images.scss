@@ -43,10 +43,10 @@
 }
 
 .figure-img {
-  margin-bottom: ($spacer-y / 2);
+  margin-bottom: calc($spacer-y / 2);
   line-height: 1;
 }
-
+ 
 .figure-caption {
   font-size: 90%;
   color: $gray-light;

@@ -20,7 +20,7 @@
 }
 
 .card-subtitle {
-  margin-top: -($card-spacer-y / 2);
+  margin-top: calc($card-spacer-y / -2);
   margin-bottom: 0;
 }
 
