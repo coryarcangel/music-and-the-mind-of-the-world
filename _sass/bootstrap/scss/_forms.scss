@@ -98,17 +98,17 @@
   input[type="datetime-local"],
   input[type="month"] {
     &.form-control {
-      line-height: $input-height;
+      line-height: calc($input-height);
     }
 
     &.input-sm,
     .input-group-sm &.form-control {
-      line-height: $input-height-sm;
+      line-height: calc($input-height-sm);
     }
 
     &.input-lg,
     .input-group-lg &.form-control {
-      line-height: $input-height-lg;
+      line-height: calc($input-height-lg);
     }
   }
 }
@@ -120,7 +120,7 @@
 // horizontal form layout.
 
 .form-control-static {
-  min-height: $input-height;
+  min-height: calc($input-height);
   // Size it appropriately next to real form controls
   padding-top: $input-padding-y;
   padding-bottom: $input-padding-y;
@@ -262,18 +262,20 @@ input[type="checkbox"] {
 .form-control-success,
 .form-control-warning,
 .form-control-danger {
-  padding-right: ($input-padding-x * 3);
+  padding-right: calc($input-padding-x * 3);
   background-repeat: no-repeat;
-  background-position: center right ($input-height * .25);
-  background-size: ($input-height * .65) ($input-height * .65);
+  background-position: center right calc($input-height * 0.25);
+  background-size: calc($input-height * 0.65) calc($input-height * 0.65);
 }
 
 // Form validation states
+// Note: Form icon variables were removed from _variables.scss due to truncated base64 strings.
+// To re-enable validation icons, define complete SVG data URIs or use external icon files.
 .has-success {
   @include form-control-validation($brand-success);
 
   .form-control-success {
-    background-image: url($form-icon-success);
+    // background-image: url($form-icon-success);
   }
 }
 
@@ -281,7 +283,7 @@ input[type="checkbox"] {
   @include form-control-validation($brand-warning);
 
   .form-control-warning {
-    background-image: url($form-icon-warning);
+    // background-image: url($form-icon-warning);
   }
 }
 
@@ -289,27 +291,30 @@ input[type="checkbox"] {
   @include form-control-validation($brand-danger);
 
   .form-control-danger {
-    background-image: url($form-icon-danger);
+    // background-image: url($form-icon-danger);
   }
 }
 
 
 
 
+// Commented out sections below contain legacy form validation feedback implementation
+// Uncomment and modify as needed for your project
+//
 // .form-control-success {
-//   background-image: url("#{$form-icon-success}");
-//   border-color: $brand-success;
-// }
-//
-// .form-control-warning {
-//   background-image: url("#{$form-icon-warning}");
-//   border-color: $brand-warning;
-// }
-//
-// .form-control-error {
-//   background-image: url("#{$form-icon-danger}");
-//   border-color: $brand-danger;
-// }
+// //   background-image: url("#{$form-icon-success}");
+// //   border-color: $brand-success;
+// // }
+// //
+// // .form-control-warning {
+// //   background-image: url("#{$form-icon-warning}");
+// //   border-color: $brand-warning;
+// // }
+// //
+// // .form-control-error {
+// //   background-image: url("#{$form-icon-danger}");
+// //   border-color: $brand-danger;
+// // }
 
 
 // .has-feedback {
@@ -318,7 +323,7 @@ input[type="checkbox"] {
 //
 //   // Ensure icons don't overlap text
 //   .form-control {
-//     padding-right: ($input-height * 1.25);
+//     padding-right: calc($input-height * 1.25);
 //   }
 // }
 // // Feedback icon
