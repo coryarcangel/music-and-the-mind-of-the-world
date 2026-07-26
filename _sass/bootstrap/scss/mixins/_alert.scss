@@ -6,9 +6,9 @@
   color: $body-color;
 
   hr {
-    border-top-color: mix(#000, $border, 5%);
+    border-top-color: color.mix(#000, $border, 5%);
   }
   .alert-link {
-    color: mix(#000, $body-color, 10%);
+    color: color.mix(#000, $body-color, 10%);
   }
 }
