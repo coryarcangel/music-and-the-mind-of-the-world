@@ -42,7 +42,7 @@ youtube: https://www.youtube.com/channel/UCPjrcaZeU9rMGAbmfYWeeLw
     data-title="{{ recording.NOTES }}"
     data-date="{% if dateSplit[0] == 'Unknown' %}{{ recording.DATE }}{% else %}{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %} & {{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}{% endif %}"
     data-part="{{ recording.MATMOTW_PART }}"
-    data-url="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
+    data-url="https://music-and-the-mind-of-the-world-423479235854-us-east-2-an/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
     >
 
       <button class="btn-audio play" v-show="activeSong != '{{ forloop.index }}' || paused == 'true'" v-on:click="playSong({{ forloop.index }})">
@@ -55,7 +55,7 @@ youtube: https://www.youtube.com/channel/UCPjrcaZeU9rMGAbmfYWeeLw
       <div class="card-block">
         <p class="small">MATMOTW_{{recording.MATMOTW}}</p>
         <p class="small now-playing">Now Playing</p>
-        <a href="https://s3.amazonaws.com/music-and-the-mind-of-the-world/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down" download>{% include download.svg %}</a>
+        <a href="https://music-and-the-mind-of-the-world-423479235854-us-east-2-an/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3" target="_blank" class="btn-audio download hidden-sm-down" download>{% include download.svg %}</a>
         <h4 class="card-title">
           {% if dateSplit[0] == 'Unknown' %}
             {{ recording.DATE }}
