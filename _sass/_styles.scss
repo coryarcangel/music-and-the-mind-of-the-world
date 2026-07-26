@@ -176,6 +176,18 @@ and (max-device-width : 1024px)  {
   font-size: 15px;
 }
 
+.maintenance-alert {
+  background-color: $brand-primary;
+  color: #fff;
+  border: 1px solid darken($brand-primary, 5%);
+  border-radius: $border-radius;
+  margin: 1rem auto 1.5rem;
+  max-width: 100%;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  font-family: $font-family-brand;
+}
+
 #main {
   @include media-breakpoint-up(sm) {
     margin-top: 50px;
