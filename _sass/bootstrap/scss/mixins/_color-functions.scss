@@ -1,0 +1,22 @@
+// Color manipulation helpers for Dart Sass compatibility
+// These replace deprecated Sass color functions (darken, lighten, fade-in, etc.)
+
+// Darken a color by mixing with black
+@function darken($color, $amount) {
+  @return color.mix(#000, $color, $amount);
+}
+
+// Lighten a color by mixing with white
+@function lighten($color, $amount) {
+  @return color.mix(#fff, $color, $amount);
+}
+
+// Adjust opacity (fade-in alternative)
+@function fade-in($color, $amount) {
+  @return rgba($color, min(opacity($color) + $amount, 1));
+}
+
+// Adjust opacity down
+@function fade-out($color, $amount) {
+  @return rgba($color, max(opacity($color) - $amount, 0));
+}
