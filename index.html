@@ -7,7 +7,7 @@ youtube: https://www.youtube.com/channel/UCPjrcaZeU9rMGAbmfYWeeLw
 <div class="home">
 
   <div class="alert maintenance-alert" role="alert">
-    This site is currently under maintenance. Some features may be unavailable while we make updates. The Youtube still works ;-)
+    This site is currently under maintenance. Some features may be unavailable while we make updates. The Youtube still works though ;-)
   </div>
 
   <section id="recordings">
@@ -46,7 +46,7 @@ youtube: https://www.youtube.com/channel/UCPjrcaZeU9rMGAbmfYWeeLw
     data-title="{{ recording.NOTES }}"
     data-date="{% if dateSplit[0] == 'Unknown' %}{{ recording.DATE }}{% else %}{{ dateSplit[0] | date: "%A, %B %-d, %Y" }}{% if dateSplit[1] %} & {{ dateSplit[1] | date: "%A, %B %-d, %Y" }}{% endif %}{% endif %}"
     data-part="{{ recording.MATMOTW_PART }}"
-    data-url="https://music-and-the-mind-of-the-world-423479235854-us-east-2-an/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
+    data-url="https://music-and-the-mind-of-the-world-423479235854-us-east-2-an.s3.us-east-2.amazonaws.com/Tony_Conrad_matmotw_{{ recording.MATMOTW }}.mp3"
     >
 
       <button class="btn-audio play" v-show="activeSong != '{{ forloop.index }}' || paused == 'true'" v-on:click="playSong({{ forloop.index }})">
