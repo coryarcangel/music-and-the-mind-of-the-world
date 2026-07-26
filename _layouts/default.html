@@ -1,165 +1,81 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon-180x180.png">
-    <link rel="icon" href="../favicon.ico">
 
-    <title>{{ site.title }}</title>
-    <meta name="description" content="{{site.description}}">
-    <meta name="author" content="Tony Conrad" />
-    <meta name="publisher" content="Arcangel Surfware" />
-    <meta name="google-site-verification" content="EcImjEAf4e_t5nOQK0vLHcOFNYu-YQWBf-z3I_BSTsk" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
 
-    <!-- facebook meta tags -->
-    <meta property="og:title" content="{{ site.title }}"/>
-    <meta property="og:description" content="{{site.description}}"/>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:description" content="{{ page.description | default: site.description }}">
+    <meta property="og:image" content="{{ site.url }}{{ site.image }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:type" content="website">
 
-    <meta property="og:image" content="{{ site.url }}{{ site.image }}"/>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico">
 
-    <meta property="og:url" content="{{ site.url }}"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHfGkIdJMvNfgRLtY3+fNjV2e7KJ0o6AiVQwFFDDL4j3" crossorigin="anonymous">
 
-    <meta property="og:site_name" content="{{ site.title }}"/>
-    <meta property="og:type" content="website"/>
-    <meta property="fb:app_id" content="1009475232467282"/>
-
-    <!-- twitter cards -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="{{ site.title }}" />
-    <meta name="twitter:description" content="{{site.description | truncate: 140}}" />
-
-    <meta name="twitter:image" content="{{ site.url }}{{ site.image }}" />
-
-    <meta name="twitter:url" content="{{site.description}}" />
-
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
   </head>
+
   <body>
-
-    <div id="app">
-      <header id="header">
-
-        <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-          <div class="navbar-brand">TONY CONRAD
-            <span class="title">MUSIC AND THE MIND OF THE WORLD</span>
-            <div class="dropdown">
-              <button class="btn dropdown-toggle" type="button" id="dropdownYear" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="btn-text">Year</span></button>
-              <div class="dropdown-menu" aria-labelledby="dropdownYear">
-                {% for year in (1976..1982) %}
-                <a class="dropdown-item scroll-link" href="#year-{{ year }}">{{ year }}</a>
-                {% endfor %}
-              </div>
-            </div>
-
-          </div>
-
-          <div class="nav navbar-nav nav-right">
-           <a class="nav-item nav-link" href="#about">About the work...</a>
-           {% if page.youtube %}
-           <a class="nav-item nav-link" href="{{ page.youtube }}" target="_blank">YouTube</a>
-           {% endif %}
-           {% if page.twitter %}
-           <a class="nav-item nav-link" href="{{ page.twitter }}" target="_blank">Twitter</a>
-           {% endif %}
-         </div>
-        </nav>
-
-        <section id="intro">
-          <h1>TONY CONRAD</h1>
-          <h1 class="title">MUSIC AND THE MIND OF THE WORLD</h1>
-          <div class="intro-text">In December 1976, Tony Conrad (1940-2016) started recording "Music and the Mind of the World," a gigantic project comprising over 200 hours of performance at the piano. <a href="#about" class="pull-xs-right">About the work...</a></div>
-          <div class="clearfix"></div>
-        </section>
-
-      </header>
-
-      <section id="footer-audio-controls">
-        <div class="audio-controls">
-
-          <div class="audio-button-wrapper">
-            <div class="button-wrapper-inner">
-              <button class="btn-audio previous" v-bind:class="{ 'inactive': (activeSong == '') || (activeSong == '1') }" v-on:click="previousSong()">{% include previous.svg %}</button>
-              <button class="btn-audio play" v-show="activeSong == '' || paused == 'true'" v-on:click="playSong( activeSong )">{% include play.svg %}</button>
-              <button class="btn-audio pause" v-show="activeSong != '' && paused == 'false'" v-on:click="pauseSong()">{% include pause.svg %}</button>
-              {% raw %}
-              <div id="title-outer-wrapper">
-                <div id="title-inner-wrapper">
-                  <a class="title scroll-link" href="#card-{{ activeSong }}">{{ date }}
-                    <span class="part" v-bind:class="{ 'hidden': (part == '') }"> Part {{ part }}</span>
-                  </a>
-                </div>
-              </div>
-                {% endraw %}
-
-              </a>
-
-              <button class="btn-audio next"  v-bind:class="{ 'inactive': (activeSong == '') || (activeSong == numberOfTracks) }" v-on:click="nextSong()">{% include next.svg %}</button>
-
-              {% raw %}
-              <a href="{{ trackUrl }}" target="_blank" class="btn-audio download hidden-sm-down" v-bind:class="{ 'hidden': (activeSong == '') }" download>
-              {% endraw %}
-                {% include download.svg %}
-              </a>
-
-            </div>
-          </div>
-
-          {% raw %}
-          <div class="progress-bar" v-on:mousedown="mouseDown">
-
-            <div class="brand-small" style="left: {{ elapsedPercentage }}%;">
-              <span class="time-elapsed">{{ currentTime }}</span>
-              <span class="divider"></span>
-              <span class="time-total">{{ totalTime }}</span>
-            </div>
-            <progress class="progress progress-info" value="{{ elapsedPercentage }}" max="100"></progress>
-          </div>
-
-
-          {% endraw %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
         </div>
-      </section>
-
-      <main id="main">
-        <div class="container">
-          {{ content }}
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#about">About</a></li>
+            <li><a href="{{ page.youtube }}" target="_blank">YouTube</a></li>
+          </ul>
         </div>
-      </main>
+      </div>
+    </nav>
 
-      <footer>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
 
-      </footer>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-4">
+            <p>{{ site.description }}</p>
+            {% if page.youtube %}
+            <p><a href="{{ page.youtube }}" target="_blank">View on YouTube</a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </footer>
 
-
-    </div>
-
+    <!-- jQuery -->
+    <script src="{{ '/scripts/jquery.min.js' | relative_url }}"></script>
+    <!-- Vue.js -->
+    <script src="{{ '/scripts/vue.min.js' | relative_url }}"></script>
+    <!-- Velocity.js -->
+    <script src="{{ '/scripts/velocity.min.js' | relative_url }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfqo2PMVfucE+3/tpOAbaseRjaSUklHfn5oy+zzpxuhV12gKvh" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="{{ '/scripts/music.js' | relative_url }}"></script>
   </body>
-
-  <script src="/scripts/modernizr-custom.js" charset="utf-8"></script>
-  <script src="/scripts/jquery.min.js"></script>
-  <script src="/scripts/velocity.min.js" charset="utf-8"></script>
-  <script src="/scripts/vue.min.js" charset="utf-8"></script>
-  <script src="/scripts/bootstrap.min.js"></script>
-  <script src="/scripts/music.js" charset="utf-8"></script>
-
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-76265500-1', 'auto');
-    ga('send', 'pageview');
-
-  </script>
-
 </html>

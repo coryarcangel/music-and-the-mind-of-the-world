@@ -1,6 +1,6 @@
 ---
 title: Music and the mind of the world
-url: http://musicandthemindofthe.world
+url: https://musicandthemindofthe.world
 timezone: America/New_York
 collections:
   logos:
@@ -26,9 +26,24 @@ defaults:
     type: pages
   values:
     layout: default
-description: From 1976 to 1982, Tony Conrad created “Music and the Mind of the World,”
-  a piano composition comprising over 200 hours of recorded music. During this time
-  everything Conrad played on the piano was recorded (with the incidental exception
-  of perhaps three or four hours).
+description: From 1976 to 1982, Tony Conrad created "Music and the Mind of the World," a piano composition comprising over 200 hours of recorded music. During this time everything Conrad played on the piano was recorded (with the incidental exception of perhaps three or four hours).
 permalink: pretty
 image: /images/facebook-image.png
+
+# Jekyll build settings
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# GitHub Pages compatible plugins
+plugins:
+  - jekyll-feed
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - bower.json
+  - bower_components
+  - node_modules
+  - .gitignore

@@ -1,13 +1,8 @@
-_site
 .sass-cache
 .jekyll-metadata
+_site
+node_modules
 bower_components
 .DS_Store
-.sass-cache
-Archive.zip
-*.gz
-config.ru
-.siteleaf.yml
-_site
-.jekyll-metadata
-bower_components
+*.log
+.~lock*
