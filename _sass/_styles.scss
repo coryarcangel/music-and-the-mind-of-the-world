@@ -49,6 +49,7 @@ and (max-device-width : 1024px)  {
     text-decoration: none;
     line-height: 18px;
     padding-top: .5rem;
+    padding: .5rem;
 
     .title {
       color: white;
@@ -100,7 +101,7 @@ and (max-device-width : 1024px)  {
     .nav-link {
       color: black;
       font-size: 12px;
-      padding: 0;
+      padding: .5rem;
     }
   }
   .song-title, .time-elapsed {
